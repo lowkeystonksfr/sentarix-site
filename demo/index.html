@@ -1,110 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>SentariX | Demo</title>
-    <meta
-      name="description"
-      content="Ways to experience the feel of SentariX and compare it with the raw world."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body>
-    <div class="pageShell">
-      <!-- Nav -->
-      <header class="navBar">
-        <div class="navInner">
-          <div class="brand">SentariX</div>
-          <nav class="navLinks">
-            <a href="/">Home</a>
-            <a href="/product/">Product</a>
-            <a href="/developers/">Developers</a>
-            <a href="/demo/">Demo</a>
-            <a href="/pricing/">Pricing</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
-          </nav>
-        </div>
-      </header>
+<head>
+    <meta charset="UTF-8">
+    <title>SentariX — Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
 
-      <main class="mainContent">
-        <section class="hero">
-          <div class="tagLine">Feel test</div>
-          <h1 class="heroTitle">Experience SentariX</h1>
-          <p class="heroSubtitle">
-            The clearest way to understand SentariX is to feel the difference
-            between raw conditions and the stable perceived timeline it
-            provides.
-          </p>
-        </section>
+<body>
 
-        <section class="section">
-          <h2 class="sectionTitle">Core comparison idea</h2>
-          <p class="sectionLead">
-            Every demo follows the same pattern. One side shows the raw world
-            with its natural jitter and variation. The other side runs on
-            SentariX and uses the stable step value. Even with identical
-            reported values, the feel becomes very different.
-          </p>
+<header>
+    <div class="logo">SentariX</div>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/product/">Product</a></li>
+            <li><a href="/developers/">Developers</a></li>
+            <li><a href="/demo/">Demo</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-          <div class="grid">
-            <div class="card">
-              <h3 class="cardTitle">Visual feel demo</h3>
-              <p class="cardText">
-                A simple scene shows two systems side by side. Both receive the
-                same input and nominal conditions. The raw side looks restless
-                and uneven. The SentariX side moves with a smooth, precise
-                rhythm that feels immediately different.
-              </p>
-            </div>
-            <div class="card">
-              <h3 class="cardTitle">Click and reaction tests</h3>
-              <p class="cardText">
-                Local click timing can be fed into SentariX and traced against
-                raw measurements. Raw intervals jump around. SentariX intervals
-                stay fixed at the same value, giving a very clear sense of
-                stability for rapid input sequences.
-              </p>
-            </div>
-            <div class="card">
-              <h3 class="cardTitle">Frame chart visualisation</h3>
-              <p class="cardText">
-                Charts with raw samples on top and SentariX step values below
-                make the effect visible at a glance. A noisy line above and a
-                flat line below show exactly what the user feels in motion.
-              </p>
-            </div>
-          </div>
-        </section>
+<section>
+    <h1>Experience the effect</h1>
+    <p>
+        Compare normal digital responsiveness against the SentariX stabilized experience.  
+        See how consistent timing transforms feel, precision, and clarity.
+    </p>
 
-        <section class="section">
-          <h2 class="sectionTitle">Next steps</h2>
-          <p class="sectionLead">
-            If you want to feel the effect inside your own environment, the
-            next step is a focused pilot. We connect SentariX to a small part of
-            your experience and compare raw and SentariX runs side by side.
-          </p>
+    <a class="btn btn-primary" href="#">Launch demo</a>
+</section>
 
-          <div class="ctaRow">
-            <a class="btnPrimary" href="/contact/">Arrange a pilot session</a>
-            <a class="btnGhost" href="/developers/">View integration notes</a>
-          </div>
-        </section>
-      </main>
+<footer>
+    © 2025 SentariX. Engineered for perfect perceived time.
+</footer>
 
-      <footer class="footer">
-        <div class="footerInner">
-          <div>© <span id="year"></span> SentariX. All rights reserved.</div>
-          <div>
-            <a href="/contact/">Contact</a>
-          </div>
-        </div>
-        <script>
-          document.getElementById("year").textContent =
-            new Date().getFullYear();
-        </script>
-      </footer>
-    </div>
-  </body>
+</body>
 </html>
