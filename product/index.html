@@ -1,48 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>SentariX — Product</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="pageShell">
+      <header class="navBar">
+        <div class="navInner">
+          <div class="brand">SentariX</div>
+          <nav class="navLinks">
+            <a href="/">Home</a>
+            <a href="/product/">Product</a>
+            <a href="/developers/">Developers</a>
+            <a href="/demo/">Demo</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-<header>
-    <div class="logo">SentariX</div>
-    <nav>
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/product/">Product</a></li>
-            <li><a href="/developers/">Developers</a></li>
-            <li><a href="/demo/">Demo</a></li>
-            <li><a href="/pricing/">Pricing</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+      <main class="mainContent">
+        <section class="heroSmall">
+          <div class="tagLine">Product Overview</div>
+          <h1 class="heroTitle">SentariX Engine</h1>
+          <p class="heroSubtitle">
+            A sealed engine that delivers consistent perceived feel across all
+            users and conditions.
+          </p>
+        </section>
 
-<section>
-    <h1>The SentariX Engine</h1>
-    <p>
-        A new foundation for digital responsiveness.  
-        SentariX ensures that every moment inside your application feels steady, precise,  
-        and perfectly consistent — regardless of hardware or real-world conditions.
-    </p>
-</section>
+        <section class="section">
+          <h2 class="sectionTitle">What the engine does</h2>
 
-<section>
-    <h2>What it delivers</h2>
-    <p><strong>Perfectly even feel</strong> across frames and interactions.</p>
-    <p><strong>Predictable input behavior</strong> for all users.</p>
-    <p><strong>Equal opportunity mechanics</strong> in competitive experiences.</p>
-    <p><strong>Drop-in integration</strong> that requires no redesign of existing systems.</p>
-</section>
+          <p class="sectionLead">
+            SentariX discovers a steady internal rhythm and produces a stable
+            step value your loop can trust. Everything else is handled inside.
+          </p>
 
-<footer>
-    © 2025 SentariX. Engineered for perfect perceived time.
-</footer>
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Sealed internal logic</h3>
+              <p class="cardText">
+                The engine exposes only what you need — a single step value.
+                Everything else is protected and optimized internally.
+              </p>
+            </div>
 
-</body>
+            <div class="card">
+              <h3 class="cardTitle">Predictable feel</h3>
+              <p class="cardText">
+                All user actions operate on a consistent rhythm, eliminating
+                subtle shifts that normally break responsiveness.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="cardTitle">No tuning required</h3>
+              <p class="cardText">
+                You drop it in. It adapts automatically. No configuration,
+                tweaking, or calibration needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="sectionWide">
+          <h2 class="sectionTitle">Outcomes you get instantly</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Equal mechanics for all users</h3>
+              <p class="cardText">
+                Every player interacts with the world on the same footing.
+                Hardware differences no longer affect control feel.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="cardTitle">Stronger immersion</h3>
+              <p class="cardText">
+                When perception becomes steady, worlds feel more believable and
+                actions feel more natural.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="cardTitle">More reliable performance</h3>
+              <p class="cardText">
+                SentariX softens the effects of unstable conditions — giving
+                users a smoother, more enjoyable experience.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footerInner">
+          <div>© <span id="year"></span> SentariX</div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
