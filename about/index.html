@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>SentariX — About</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="pageShell">
+      <header class="navBar">
+        <div class="navInner">
+          <div class="brand">SentariX</div>
+          <nav class="navLinks">
+            <a href="/">Home</a>
+            <a href="/product/">Product</a>
+            <a href="/developers/">Developers</a>
+            <a href="/demo/">Demo</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-<header>
-    <div class="logo">SentariX</div>
-    <nav>
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/product/">Product</a></li>
-            <li><a href="/developers/">Developers</a></li>
-            <li><a href="/demo/">Demo</a></li>
-            <li><a href="/pricing/">Pricing</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+      <main class="mainContent">
+        <section class="heroSmall">
+          <div class="tagLine">Our Mission</div>
+          <h1 class="heroTitle">About SentariX</h1>
+          <p class="heroSubtitle">
+            We believe consistent feel should be a universal part of digital
+            interaction.
+          </p>
+        </section>
 
-<section>
-    <h1>About SentariX</h1>
-    <p>
-        SentariX began with a simple goal:  
-        allow every user to experience digital environments with the exact same feel.
-    </p>
+        <section class="section">
+          <h2 class="sectionTitle">Why SentariX exists</h2>
 
-    <p>
-        No drift. No hidden variations.  
-        Just a stable, shared sense of responsiveness for everyone.
-    </p>
-</section>
+          <p class="sectionLead">
+            For decades, digital experiences have improved visually — but feel
+            has remained unstable. SentariX changes that.
+          </p>
 
-<footer>
-    © 2025 SentariX. Engineered for perfect perceived time.
-</footer>
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">User-first vision</h3>
+              <p class="cardText">
+                People should feel the world respond the same way every moment.
+              </p>
+            </div>
 
-</body>
+            <div class="card">
+              <h3 class="cardTitle">Developer-friendly tools</h3>
+              <p class="cardText">Drop-in solutions with no complexity.</p>
+            </div>
+
+            <div class="card">
+              <h3 class="cardTitle">A new standard</h3>
+              <p class="cardText">
+                Consistency becomes the baseline for all future experiences.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footerInner">
+          <div>© <span id="year"></span> SentariX</div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
