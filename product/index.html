@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SentariX | Product</title>
+    <meta
+      name="description"
+      content="Product view of SentariX, the engine that keeps perceived time perfectly consistent for real time experiences."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="pageShell">
+      <!-- Nav -->
+      <header class="navBar">
+        <div class="navInner">
+          <div class="brand">SentariX</div>
+          <nav class="navLinks">
+            <a href="/">Home</a>
+            <a href="/product/">Product</a>
+            <a href="/developers/">Developers</a>
+            <a href="/demo/">Demo</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="mainContent">
+        <section class="hero">
+          <div class="tagLine">Product view</div>
+          <h1 class="heroTitle">SentariX Engine</h1>
+          <p class="heroSubtitle">
+            A sealed engine that discovers a stable internal rhythm and exposes
+            a single step value for your loop. Everything else stays inside.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="sectionTitle">High level picture</h2>
+          <p class="sectionLead">
+            SentariX watches the conditions your experience lives in and
+            maintains a stable perceived timeline that you can trust. Your code
+            keeps control of gameplay and logic, while the engine ensures that
+            each step belongs to the same internal beat.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Thin public interface</h3>
+              <p class="cardText">
+                The engine exposes a narrow set of calls. You send in samples
+                from your world and read a step value in microseconds. Internal
+                state and logic stay sealed inside the engine.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Perceived time layer</h3>
+              <p class="cardText">
+                Rather than reacting directly to raw conditions, your loop
+                advances on a stable step value computed by SentariX. This keeps
+                the feel of the experience uniform, even as the environment
+                moves around.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Engine independent</h3>
+              <p class="cardText">
+                SentariX does not replace your engine or network stack. It sits
+                above them and feeds a consistent step value into your existing
+                update logic, so adoption can be progressive.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="sectionTitle">Observable effect</h2>
+          <p class="sectionLead">
+            When you hook SentariX into a loop and trace its step value, you
+            see a perfectly flat line even while the raw conditions look noisy
+            and chaotic. That flat line is what the user feels.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Stable step value</h3>
+              <p class="cardText">
+                Regardless of short term spikes or dips in raw conditions, the
+                step value that reaches your loop remains nearly identical from
+                one update to the next.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Consistent user feel</h3>
+              <p class="cardText">
+                When frames advance on this stable step value, aiming, movement
+                and interaction take on a very clear, predictable feel. Users
+                notice even before they see any charts.
+              </p>
+            </div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btnPrimary" href="/demo/">View sample visualisation</a>
+            <a class="btnGhost" href="/developers/">Read integration notes</a>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footerInner">
+          <div>© <span id="year"></span> SentariX. All rights reserved.</div>
+          <div>
+            <a href="/contact/">Contact</a>
+          </div>
+        </div>
+        <script>
+          document.getElementById("year").textContent =
+            new Date().getFullYear();
+        </script>
+      </footer>
+    </div>
+  </body>
+</html>
