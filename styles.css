@@ -1,265 +1,124 @@
-/* Global reset */
+/* ===== Global Reset ===== */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html, body {
-    height: 100%;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #050505;
-    color: #f5f5f5;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #060606;
+    color: #E6E6E6;
     line-height: 1.6;
 }
 
-/* Layout */
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-.pageShell {
-    min-height: 100vh;
+header {
+    width: 100%;
+    padding: 24px 40px;
     display: flex;
-    flex-direction: column;
-}
-
-.mainContent {
-    flex: 1;
-}
-
-/* Nav */
-
-.navBar {
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
-    z-index: 50;
-    backdrop-filter: blur(16px);
-    background: rgba(5, 5, 5, 0.92);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(6, 6, 6, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 10;
 }
 
-.navInner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 14px 20px;
+/* ===== Logo ===== */
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+}
+
+/* ===== Navigation ===== */
+nav ul {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 40px;
+    list-style: none;
 }
-
-.brand {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+nav ul li a {
+    font-size: 16px;
+    opacity: 0.85;
+    transition: 0.2s;
 }
-
-.navLinks {
-    display: flex;
-    gap: 22px;
-    font-size: 14px;
-}
-
-.navLinks a {
-    color: #eaeaea;
-    text-decoration: none;
-    opacity: 0.78;
-    transition: opacity 0.18s ease, transform 0.18s ease;
-}
-
-.navLinks a:hover {
+nav ul li a:hover {
     opacity: 1;
-    transform: translateY(-1px);
 }
 
-/* Hero */
-
-.hero {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 96px 20px 72px 20px;
+/* ===== Sections ===== */
+section {
+    padding: 100px 40px;
     text-align: center;
-}
-
-.heroTitle {
-    font-size: 54px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-}
-
-.heroSubtitle {
-    max-width: 760px;
+    max-width: 900px;
     margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 24px;
+    opacity: 0.85;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 12px;
     font-size: 18px;
-    color: #d4d4d4;
+    font-weight: 500;
+    margin: 12px;
+    transition: 0.2s;
 }
 
-/* Sections */
-
-.section {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 40px 20px 64px 20px;
+.btn-primary {
+    background: #FFFFFF;
+    color: #000;
 }
 
-.sectionWide {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px 72px 20px;
+.btn-primary:hover {
+    background: #EAEAEA;
 }
 
-.sectionTitle {
-    font-size: 30px;
+.btn-dark {
+    background: #1A1A1A;
+    border: 1px solid #333;
+}
+
+.btn-dark:hover {
+    background: #222;
+}
+
+/* ===== Footer ===== */
+footer {
+    padding: 60px 40px;
     text-align: center;
-    margin-bottom: 18px;
-}
-
-.sectionLead {
-    max-width: 860px;
-    margin: 0 auto 32px auto;
-    text-align: center;
-    color: #d0d0d0;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
-    margin-top: 16px;
-}
-
-.card {
-    background: radial-gradient(circle at top, #171717, #050505);
-    border-radius: 18px;
-    padding: 24px 22px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.cardTitle {
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.cardText {
-    font-size: 14px;
-    color: #cccccc;
-}
-
-/* Lists */
-
-.bulletList {
-    list-style: disc;
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.bulletList li {
-    margin-bottom: 6px;
-}
-
-/* Call to action */
-
-.ctaRow {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 28px;
-}
-
-.btnPrimary,
-.btnGhost {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 22px;
-    border-radius: 999px;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease,
-        box-shadow 0.18s ease;
-}
-
-.btnPrimary {
-    background: #ffffff;
-    color: #050505;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-}
-
-.btnPrimary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 0 32px rgba(255, 255, 255, 0.22);
-}
-
-.btnGhost {
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    color: #f5f5f5;
-    background: transparent;
-}
-
-.btnGhost:hover {
-    background: rgba(255, 255, 255, 0.06);
-}
-
-/* Page specific helpers */
-
-.tagLine {
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    font-size: 12px;
-    color: #a0a0a0;
-    margin-bottom: 8px;
-}
-
-.mono {
-    font-family: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono",
-        "Courier New", monospace;
-    font-size: 13px;
-}
-
-/* Footer */
-
-.footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 18px 20px 22px 20px;
-    font-size: 12px;
-    color: #9c9c9c;
-}
-
-.footerInner {
-    max-width: 1120px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.footerInner a {
-    color: #bbbbbb;
-    text-decoration: none;
-}
-
-/* Simple responsive tweaks */
-
-@media (max-width: 720px) {
-    .heroTitle {
-        font-size: 40px;
-        letter-spacing: 0.2em;
-    }
-    .heroSubtitle {
-        font-size: 16px;
-    }
-    .navInner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .navLinks {
-        flex-wrap: wrap;
-        row-gap: 6px;
-    }
+    opacity: 0.5;
+    font-size: 16px;
+    margin-top: 120px;
+    border-top: 1px solid #111;
 }
