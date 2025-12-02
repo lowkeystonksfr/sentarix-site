@@ -233,3 +233,221 @@ body {
     transform: translateY(0);
   }
 }
+
+
+/* =========================================================
+   RESPONSIVE SYSTEM
+   PC → Tablet → Mobile Large → Mobile Small
+   ========================================================= */
+
+/* ============================
+   TABLET (≤ 1024px)
+   ============================ */
+@media (max-width: 1024px) {
+  .navBar {
+    padding: 20px 28px;
+  }
+
+  .hero,
+  .heroSmall {
+    padding: 130px 20px 100px;
+  }
+
+  .heroTitle {
+    font-size: 60px;
+  }
+
+  .heroSubtitle {
+    font-size: 19px;
+    max-width: 90%;
+  }
+
+  .section,
+  .sectionWide {
+    padding: 90px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 34px;
+  }
+
+  .sectionLead {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 28px;
+  }
+}
+
+/* ============================
+   MOBILE LARGE (≤ 768px)
+   ============================ */
+@media (max-width: 768px) {
+  /* NAV */
+  .navInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navLinks {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  .navLinks a {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  /* HERO */
+  .hero,
+  .heroSmall {
+    padding: 110px 20px 80px;
+  }
+
+  .tagLine {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .heroTitle {
+    font-size: 42px;
+    line-height: 1.15;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+    max-width: 95%;
+  }
+
+  .ctaRow a {
+    padding: 12px 24px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  /* SECTIONS */
+  .section,
+  .sectionWide {
+    padding: 70px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 26px;
+  }
+
+  .sectionLead {
+    font-size: 16px;
+    margin-bottom: 40px;
+    max-width: 95%;
+  }
+
+  /* GRID & CARDS */
+  .grid {
+    gap: 24px;
+  }
+
+  .card {
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardText {
+    font-size: 15px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 32px;
+  }
+
+  .footerInner {
+    font-size: 13px;
+  }
+}
+
+/* ============================
+   MOBILE SMALL (≤ 480px)
+   ============================ */
+@media (max-width: 480px) {
+  /* NAV */
+  .brand {
+    font-size: 22px;
+  }
+
+  .navLinks {
+    gap: 10px 14px;
+  }
+
+  .navLinks a {
+    font-size: 13px;
+  }
+
+  /* HERO */
+  .hero,
+  .heroSmall {
+    padding: 90px 16px 70px;
+  }
+
+  .tagLine {
+    font-size: 11px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  .heroSubtitle {
+    font-size: 15px;
+  }
+
+  .ctaRow a {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+
+  /* SECTIONS */
+  .section,
+  .sectionWide {
+    padding: 60px 18px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+
+  .sectionLead {
+    font-size: 15px;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 20px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardText {
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 26px;
+  }
+
+  .footerInner {
+    font-size: 12px;
+  }
+}
+
