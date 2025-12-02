@@ -1,43 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>SentariX — Developers</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="pageShell">
+      <header class="navBar">
+        <div class="navInner">
+          <div class="brand">SentariX</div>
+          <nav class="navLinks">
+            <a href="/">Home</a>
+            <a href="/product/">Product</a>
+            <a href="/developers/">Developers</a>
+            <a href="/demo/">Demo</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-<header>
-    <div class="logo">SentariX</div>
-    <nav>
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/product/">Product</a></li>
-            <li><a href="/developers/">Developers</a></li>
-            <li><a href="/demo/">Demo</a></li>
-            <li><a href="/pricing/">Pricing</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+      <main class="mainContent">
+        <section class="heroSmall">
+          <div class="tagLine">For Developers</div>
+          <h1 class="heroTitle">Integration</h1>
+          <p class="heroSubtitle">
+            SentariX integrates into any real-time loop in minutes.
+          </p>
+        </section>
 
-<section>
-    <h1>Developer Integration</h1>
-    <p>
-        SentariX is designed to integrate cleanly into existing engines  
-        without replacing core systems or restructuring gameplay logic.
-    </p>
+        <section class="section">
+          <h2 class="sectionTitle">How it connects</h2>
 
-    <p>Simple API. Clear outcomes. Minimal overhead.</p>
+          <p class="sectionLead">
+            Your loop passes a small set of readings. SentariX returns a single
+            consistent step value.
+          </p>
 
-    <a class="btn btn-primary" href="/demo/">Run the showcase</a>
-</section>
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Tiny API surface</h3>
+              <p class="cardText">
+                Minimal calls. No tuning. No internals exposed.
+              </p>
+            </div>
 
-<footer>
-    © 2025 SentariX. Engineered for perfect perceived time.
-</footer>
+            <div class="card">
+              <h3 class="cardTitle">Portable</h3>
+              <p class="cardText">
+                Works in engines, custom frameworks, or embedded systems.
+              </p>
+            </div>
 
-</body>
+            <div class="card">
+              <h3 class="cardTitle">Fast</h3>
+              <p class="cardText">
+                Built lean. Adds no measurable overhead to your frame.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="sectionWide">
+          <h2 class="sectionTitle">Supported environments</h2>
+
+          <div class="grid">
+            <div class="card"><h3 class="cardTitle">Unity</h3></div>
+            <div class="card"><h3 class="cardTitle">Unreal</h3></div>
+            <div class="card"><h3 class="cardTitle">Godot</h3></div>
+            <div class="card"><h3 class="cardTitle">Custom Engines</h3></div>
+            <div class="card"><h3 class="cardTitle">Low-level Loops</h3></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
