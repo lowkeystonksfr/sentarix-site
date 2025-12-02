@@ -1,46 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentarix — Consistent Time Engine</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentariX</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0a0a0a;
+            color: #e6e6e6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        header h1 {
+            font-size: 64px;
+            letter-spacing: 6px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.75;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 850px;
+            margin: 0 auto 40px;
+            line-height: 1.6em;
+            opacity: 0.85;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #161616;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.4;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 48px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
     <header>
         <h1>SENTARIX</h1>
-        <p>The world’s first engine that delivers perfectly consistent perceived time.</p>
+        <p>The world’s first engine built to deliver perfectly consistent perceived time — giving every action, frame, and interaction the same feel every moment.</p>
     </header>
 
-    <section class="hero">
-        <h2>Consistency You Can Feel</h2>
+    <section>
+        <h2>The Real Problem</h2>
         <p>
-            Sentarix maintains a stable timing layer even when real-world conditions fluctuate.
-            Inputs, physics, and gameplay feel uniform — every frame, every click.
+            Today’s digital experiences suffer from something everyone feels but no one talks about: 
+            inconsistent moment-to-moment responsiveness. Small variations stack up — frame pacing, 
+            input irregularities, fluctuating conditions — and the experience never feels truly uniform.
         </p>
     </section>
 
-    <section class="features">
-        <div class="feature">
-            <h3>Perfect Step Time</h3>
-            <p>Sentarix produces a stable step_us value every tick — removing jitter from perception.</p>
-        </div>
-        <div class="feature">
-            <h3>Instant Responsiveness</h3>
-            <p>Your actions operate on a consistent timeline, improving user feel and precision.</p>
-        </div>
-        <div class="feature">
-            <h3>Drop-In Ready</h3>
-            <p>Available as a sealed SDK. Integrate in minutes, gain stability instantly.</p>
+    <section>
+        <h2>What SentariX Delivers</h2>
+        <p>
+            SentariX gives applications a stable layer of perceived time. That means every frame and 
+            every input happens on the same rhythm, giving users a level of consistency that simply 
+            isn’t possible with traditional approaches.
+        </p>
+
+        <div class="features">
+            <div class="card">
+                <h3>Uniform Feel</h3>
+                <p>
+                    Actions feel the same every time — no matter what the system or environment does.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Smoother Interactions</h3>
+                <p>
+                    Inputs, gameplay, controls, and transitions feel natural, predictable, and stable.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Drop-In Design</h3>
+                <p>
+                    Delivered as a sealed SDK. Integrate it without changing your architecture.
+                </p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2025 Sentarix Technologies</p>
-    </footer>
+    <section>
+        <h2>Why It Matters</h2>
+        <p>
+            Consistency is the foundation of immersion. When timing becomes uniform, digital worlds 
+            feel grounded. Actions connect. Control feels direct. Everything clicks.
+        </p>
+    </section>
 
-    <script src="script.js"></script>
+    <footer>
+        © 2025 SentariX. All rights reserved.
+    </footer>
 </body>
 </html>
+
