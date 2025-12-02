@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SentariX | Developers</title>
+    <meta
+      name="description"
+      content="Developer view of SentariX with integration outline and SDK surface."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="pageShell">
+      <!-- Nav -->
+      <header class="navBar">
+        <div class="navInner">
+          <div class="brand">SentariX</div>
+          <nav class="navLinks">
+            <a href="/">Home</a>
+            <a href="/product/">Product</a>
+            <a href="/developers/">Developers</a>
+            <a href="/demo/">Demo</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+      </header>
 
+      <main class="mainContent">
+        <section class="hero">
+          <div class="tagLine">For engineers</div>
+          <h1 class="heroTitle">Developer view</h1>
+          <p class="heroSubtitle">
+            SentariX is designed as a sealed engine with a very small surface.
+            You keep your stack. You add a stable perceived timeline.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="sectionTitle">SDK shape</h2>
+          <p class="sectionLead">
+            The SDK exposes a compact interface that can be wired into an
+            existing loop in a few lines. Internal logic is not visible and is
+            not required for integration.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Minimal public calls</h3>
+              <p class="cardText">
+                The core flow follows three ideas. Update the engine with recent
+                observations from your world, read the new step value, and
+                optionally reset the engine when you need a fresh start. The
+                exact method names are simple and stable.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Drop in loop wiring</h3>
+              <p class="cardText">
+                In a game or simulation loop you call the engine once per
+                update, then advance your world using the step value it returns.
+                This makes it very easy to toggle SentariX on and off for A and
+                B comparison.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Language and engine support</h3>
+              <p class="cardText">
+                SentariX is being packaged for common stacks. For example
+                compiled extensions for Python, bindings for popular engines,
+                and server side integrations for evaluation work.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="sectionTitle">Integration outline</h2>
+          <p class="sectionLead">
+            Exact code varies by stack, but the pattern stays the same. Feed
+            observations into SentariX, read the step value, and advance your
+            world on that value.
+          </p>
+
+          <div class="card">
+            <pre class="mono">
+# Pseudo code for a client loop
+
+engine = SentariX()
+
+while running:
+    raw_sample = read_current_conditions()   # for example a network sample
+    engine.update(raw_sample)
+
+    step_us = engine.step_us()
+    step_seconds = step_us / 1_000_000.0
+
+    update_simulation(step_seconds)
+    render_frame()
+            </pre>
+          </div>
+
+          <p class="sectionLead" style="margin-top: 26px;">
+            This pattern can be used in a client loop, a dedicated test harness,
+            or a replay environment. The effect is easy to observe and easy to
+            compare with and without SentariX active.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btnPrimary" href="/demo/">Run feel tests</a>
+            <a class="btnGhost" href="/contact/">Request SDK access</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footerInner">
+          <div>© <span id="year"></span> SentariX. All rights reserved.</div>
+          <div>
+            <a href="/contact/">Contact</a>
+          </div>
+        </div>
+        <script>
+          document.getElementById("year").textContent =
+            new Date().getFullYear();
+        </script>
+      </footer>
+    </div>
+  </body>
+</html>
