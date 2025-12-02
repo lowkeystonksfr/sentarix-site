@@ -1,155 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SentariX</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #0a0a0a;
-            color: #e6e6e6;
-        }
-
-        header {
-            text-align: center;
-            padding: 90px 20px 50px;
-        }
-
-        header h1 {
-            font-size: 64px;
-            letter-spacing: 6px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        header p {
-            font-size: 20px;
-            opacity: 0.75;
-            max-width: 850px;
-            margin: 0 auto;
-            line-height: 1.6em;
-        }
-
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 36px;
-            margin-bottom: 25px;
-        }
-
-        p {
-            font-size: 19px;
-            max-width: 900px;
-            margin: 0 auto 50px;
-            line-height: 1.6em;
-            opacity: 0.85;
-        }
-
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background-color: #161616;
-            padding: 30px;
-            border-radius: 12px;
-            width: 300px;
-            text-align: left;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            font-size: 22px;
-        }
-
-        .card p {
-            font-size: 16px;
-            opacity: 0.7;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            opacity: 0.4;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 48px;
-            }
-            h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>SentariX</h1>
-        <p>
-            The world’s first engine designed to deliver perfectly consistent perceived time, creating a uniform feel across every action, frame, and moment.
-        </p>
-    </header>
-
-    <section>
-        <h2>The Real Problem</h2>
-        <p>
-            Digital experiences feel different from moment to moment. Responsiveness shifts in small ways that accumulate. The result is simple: things never feel truly consistent, even when performance looks fine on paper.
-        </p>
-    </section>
-
-    <section>
-        <h2>What SentariX Does</h2>
-        <p>
-            SentariX stabilizes the feel of an experience. Every frame and input aligns on a unified rhythm, removing subtle irregularities that users always notice but can never explain.
-        </p>
-
-        <div class="features">
-            <div class="card">
-                <h3>Uniform Feel</h3>
-                <p>
-                    Every action responds with the same clarity. Control stays predictable across all conditions.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Smoother Interactions</h3>
-                <p>
-                    Moment to moment feel becomes continuous, natural, and uninterrupted.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Drop In Ready</h3>
-                <p>
-                    Shipped as a sealed SDK. Integrates easily. No rewrites or system changes needed.
-                </p>
-            </div>
+    <title>SentariX | Consistent Perceived Time</title>
+    <meta
+      name="description"
+      content="SentariX keeps digital experiences on a perfectly steady perceived timeline so that every action, frame, and interaction feels the same every moment."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="pageShell">
+      <!-- Nav -->
+      <header class="navBar">
+        <div class="navInner">
+          <div class="brand">SentariX</div>
+          <nav class="navLinks">
+            <a href="/">Home</a>
+            <a href="/product/">Product</a>
+            <a href="/developers/">Developers</a>
+            <a href="/demo/">Demo</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </nav>
         </div>
-    </section>
+      </header>
 
-    <section>
-        <h2>Why It Matters</h2>
-        <p>
-            When the feel becomes consistent, everything improves. Users stay immersed, actions land more clearly, and the experience becomes unmistakably better from the first moment of use.
-        </p>
-    </section>
+      <main class="mainContent">
+        <!-- Hero -->
+        <section class="hero">
+          <div class="tagLine">Perceived time engine</div>
+          <h1 class="heroTitle">SentariX</h1>
+          <p class="heroSubtitle">
+            The world’s first engine designed to deliver perfectly consistent
+            perceived time, giving every action, frame, and interaction the same
+            feel every moment.
+          </p>
 
-    <footer>
-        © 2025 SentariX. All rights reserved.
-    </footer>
-</body>
+          <div class="ctaRow">
+            <a class="btnPrimary" href="/demo/">Feel the effect</a>
+            <a class="btnGhost" href="/product/">View product outline</a>
+          </div>
+        </section>
+
+        <!-- The real problem -->
+        <section class="section">
+          <h2 class="sectionTitle">The real problem</h2>
+          <p class="sectionLead">
+            Digital experiences have a hidden issue that everyone feels but no
+            one names clearly. Responsiveness changes from moment to moment.
+            Small variations appear in subtle ways and the experience never
+            feels truly uniform.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Frames that never feel the same</h3>
+              <p class="cardText">
+                Users move, aim, build, or steer, yet every frame lands a little
+                differently. Some moments feel heavy, others floaty. Frame rate
+                improves but the sense of control never really locks in.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Inputs that do not match intention</h3>
+              <p class="cardText">
+                The same click or stick movement can feel crisp in one moment
+                and muddy in the next. Users blame their device, the network, or
+                themselves, because there is no clear layer that keeps the feel
+                steady.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Engines that only see raw conditions</h3>
+              <p class="cardText">
+                Engines react directly to fluctuating conditions. Network
+                variation, platform quirks, and local load all bleed into the
+                user experience, producing a different sense of time from one
+                instant to the next.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- What SentariX does -->
+        <section class="section">
+          <h2 class="sectionTitle">What SentariX provides</h2>
+          <p class="sectionLead">
+            SentariX sits above the rest of the stack and maintains a stable
+            perceived timeline for your experience. Engines keep running as
+            usual, but the user feels a steady, predictable world.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Perfect step time for perception</h3>
+              <p class="cardText">
+                SentariX produces a stable step value on every update. Your loop
+                uses that value to advance simulation and presentation so that
+                each frame belongs to the same rhythm, even when real
+                conditions are uneven.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Consistent feel across hardware</h3>
+              <p class="cardText">
+                Players on very different setups can share the same sense of
+                control. SentariX smooths out the hidden variations that make
+                high frame count users feel different from everyone else.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Drop in engine layer</h3>
+              <p class="cardText">
+                The engine ships as a sealed SDK with a very small public
+                surface. You feed it samples from your world and read a single
+                step value. No internal details are exposed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Who it is for -->
+        <section class="sectionWide">
+          <h2 class="sectionTitle">Where SentariX fits first</h2>
+          <p class="sectionLead">
+            Any experience that lives or dies on feel benefits from a stable
+            perceived timeline.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="cardTitle">Competitive play</h3>
+              <p class="cardText">
+                Shooting, movement, building, and precision inputs stay aligned
+                with the user’s intention. Consistent feel makes skill more
+                readable and raises trust in the experience.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Training and simulation</h3>
+              <p class="cardText">
+                When reaction and control matter, uneven feel can break
+                learning. SentariX keeps each scenario aligned with the same
+                internal rhythm, so practice transfers better.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="cardTitle">Immersive reality and beyond</h3>
+              <p class="cardText">
+                Head movement, input, and scene updates can share a unified
+                perceived timeline. The more senses you engage, the more
+                valuable it becomes to keep time itself consistent.
+              </p>
+            </div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btnPrimary" href="/developers/">View integration guide</a>
+            <a class="btnGhost" href="/contact/">Start a pilot conversation</a>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footerInner">
+          <div>© <span id="year"></span> SentariX. All rights reserved.</div>
+          <div>
+            <a href="/contact/">Contact</a>
+          </div>
+        </div>
+        <script>
+          document.getElementById("year").textContent =
+            new Date().getFullYear();
+        </script>
+      </footer>
+    </div>
+  </body>
 </html>
 
