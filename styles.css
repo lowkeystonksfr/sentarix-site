@@ -9,7 +9,7 @@ body {
   background: #000;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -19,13 +19,13 @@ body {
 }
 
 /* =========================================================
-   NAV
+   NAV (Premium)
    ========================================================= */
 .navBar {
-  padding: 24px 40px;
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.35);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 26px 48px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -40,22 +40,22 @@ body {
 .brand {
   font-size: 28px;
   font-weight: 800;
+  letter-spacing: 0.4px;
   cursor: pointer;
-  transition: opacity 0.25s;
-  letter-spacing: 0.3px;
+  transition: opacity 0.2s ease;
 }
 
 .brand:hover {
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .navLinks a {
-  margin-left: 32px;
+  margin-left: 42px;
   text-decoration: none;
-  color: #bbb;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  color: #ccc;
   font-weight: 500;
   font-size: 17px;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .navLinks a:hover {
@@ -63,76 +63,75 @@ body {
 }
 
 /* =========================================================
-   HERO
+   HERO (Apple aesthetic)
    ========================================================= */
 .hero,
 .heroSmall {
   text-align: center;
-  padding: 160px 24px 120px;
+  padding: 170px 24px 130px;
   animation: fadeIn 1.2s ease-out both;
 }
 
 .tagLine {
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
 .heroTitle {
-  margin-top: 20px;
-  font-size: 74px;
+  margin-top: 22px;
+  font-size: 78px;
   font-weight: 900;
-  letter-spacing: -1px;
-  text-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+  letter-spacing: -1.5px;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.04);
 }
 
 .heroSubtitle {
-  margin-top: 26px;
+  margin-top: 30px;
   max-width: 820px;
   margin-left: auto;
   margin-right: auto;
-  color: #d0d0d0;
+  color: #d6d6d6;
   font-size: 22px;
-  line-height: 1.65;
+  line-height: 1.7;
   opacity: 0.9;
 }
 
 .ctaRow {
-  margin-top: 52px;
+  margin-top: 55px;
 }
 
 /* =========================================================
-   BUTTONS
+   BUTTONS (Premium)
    ========================================================= */
 .btnPrimary,
 .btnGhost {
-  padding: 15px 36px;
+  padding: 15px 38px;
   display: inline-block;
-  border-radius: 40px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  margin-right: 16px;
-  font-size: 16px;
+  margin-right: 20px;
+  font-size: 17px;
   transition: all 0.25s ease;
-  white-space: nowrap;
 }
 
 .btnPrimary {
   background: #fff;
   color: #000;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 28px rgba(255, 255, 255, 0.10);
 }
 
 .btnPrimary:hover {
-  opacity: 0.88;
   transform: translateY(-2px);
+  opacity: 0.92;
 }
 
 .btnGhost {
-  border: 2px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .btnGhost:hover {
@@ -142,12 +141,12 @@ body {
 }
 
 /* =========================================================
-   SECTION BASE
+   SECTIONS (Apple spacing)
    ========================================================= */
 .section,
 .sectionWide {
-  padding: 110px 24px;
-  max-width: 1100px;
+  padding: 130px 24px;
+  max-width: 1200px;
   margin: auto;
   animation: fadeIn 1.2s ease-out both;
 }
@@ -157,64 +156,66 @@ body {
 }
 
 .sectionTitle {
-  font-size: 40px;
+  font-size: 42px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.6px;
 }
 
 .sectionLead {
   max-width: 900px;
   text-align: center;
-  margin: 0 auto 70px;
-  color: #c7c7c7;
-  font-size: 20px;
-  line-height: 1.6;
+  margin: 0 auto 90px;
+  color: #cfcfcf;
+  font-size: 21px;
+  line-height: 1.7;
   opacity: 0.9;
 }
 
 /* =========================================================
-   GRID + CARDS
+   GRID + CARDS (soft premium)
    ========================================================= */
 .grid {
   display: grid;
-  gap: 36px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .card {
-  padding: 36px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #111, #0c0c0c);
-  border: 1px solid #222;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 46px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 28px rgba(255, 255, 255, 0.06);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.08);
 }
 
 .cardTitle {
-  font-size: 22px;
-  margin-bottom: 14px;
+  font-size: 24px;
+  margin-bottom: 16px;
   font-weight: 700;
 }
 
 .cardText {
-  color: #c4c4c4;
-  line-height: 1.6;
+  color: #d0d0d0;
+  line-height: 1.7;
+  font-size: 17px;
 }
 
 /* =========================================================
    FOOTER
    ========================================================= */
 .footer {
-  padding: 50px;
+  padding: 60px;
   text-align: center;
-  border-top: 1px solid #222;
-  margin-top: 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 120px;
 }
 
 .footerInner {
@@ -226,43 +227,22 @@ body {
    ANIMATIONS
    ========================================================= */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE (Apple-tuned)
    ========================================================= */
 
 /* TABLET ≤1024px */
 @media (max-width: 1024px) {
-  .hero,
-  .heroSmall {
-    padding: 130px 20px 100px;
-  }
+  .navBar { padding: 22px 32px; }
 
-  .heroTitle {
-    font-size: 60px;
-  }
+  .heroTitle { font-size: 62px; }
+  .heroSubtitle { font-size: 19px; }
 
-  .heroSubtitle {
-    font-size: 19px;
-  }
-
-  .section,
-  .sectionWide {
-    padding: 90px 20px;
-  }
-
-  .sectionTitle {
-    font-size: 34px;
-  }
+  .section { padding: 110px 20px; }
 }
 
 /* MOBILE LARGE ≤768px */
@@ -275,8 +255,12 @@ body {
   .navLinks {
     margin-top: 12px;
     display: flex;
+    gap: 14px 18px;
     flex-wrap: wrap;
-    gap: 12px 18px;
+  }
+
+  .brand {
+    font-size: 24px;
   }
 
   .navLinks a {
@@ -284,25 +268,30 @@ body {
     font-size: 15px;
   }
 
+  .hero,
+  .heroSmall {
+    padding: 120px 22px 80px;
+  }
+
   .heroTitle {
-    font-size: 42px;
+    font-size: 44px;
   }
 
   .heroSubtitle {
     font-size: 17px;
-    max-width: 95%;
-  }
-
-  .ctaRow a {
-    padding: 12px 24px;
   }
 
   .sectionTitle {
-    font-size: 28px;
+    font-size: 30px;
   }
 
-  .sectionLead {
-    font-size: 17px;
+  .grid {
+    gap: 32px;
+  }
+
+  .card {
+    padding: 32px;
+    border-radius: 20px;
   }
 }
 
@@ -312,25 +301,20 @@ body {
     font-size: 22px;
   }
 
-  .navLinks a {
-    font-size: 13px;
-  }
-
   .heroTitle {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .heroSubtitle {
     font-size: 15px;
   }
 
-  .ctaRow a {
-    padding: 10px 20px;
-    font-size: 13px;
+  .sectionTitle {
+    font-size: 24px;
   }
 
-  .sectionTitle {
-    font-size: 22px;
+  .card {
+    padding: 26px;
+    border-radius: 18px;
   }
 }
-
