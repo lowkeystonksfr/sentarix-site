@@ -8,8 +8,7 @@
 body {
   background: #000;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -39,28 +38,28 @@ body {
 }
 
 .brand {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
-  letter-spacing: 0.5px;
   cursor: pointer;
   transition: opacity 0.25s;
+  letter-spacing: 0.3px;
 }
 
 .brand:hover {
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .navLinks a {
-  margin-left: 28px;
+  margin-left: 32px;
   text-decoration: none;
   color: #bbb;
   transition: color 0.3s ease, opacity 0.3s ease;
   font-weight: 500;
+  font-size: 17px;
 }
 
 .navLinks a:hover {
   color: #fff;
-  opacity: 1;
 }
 
 /* =========================================================
@@ -82,25 +81,25 @@ body {
 
 .heroTitle {
   margin-top: 20px;
-  font-size: 76px;
+  font-size: 74px;
   font-weight: 900;
   letter-spacing: -1px;
   text-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
 }
 
 .heroSubtitle {
-  margin-top: 24px;
+  margin-top: 26px;
   max-width: 820px;
   margin-left: auto;
   margin-right: auto;
   color: #d0d0d0;
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.65;
   opacity: 0.9;
 }
 
 .ctaRow {
-  margin-top: 48px;
+  margin-top: 52px;
 }
 
 /* =========================================================
@@ -116,6 +115,7 @@ body {
   margin-right: 16px;
   font-size: 16px;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .btnPrimary {
@@ -123,9 +123,10 @@ body {
   color: #000;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
+
 .btnPrimary:hover {
-  transform: translateY(-2px);
   opacity: 0.88;
+  transform: translateY(-2px);
 }
 
 .btnGhost {
@@ -133,6 +134,7 @@ body {
   color: #fff;
   background: rgba(255, 255, 255, 0.05);
 }
+
 .btnGhost:hover {
   background: #fff;
   color: #000;
@@ -234,20 +236,12 @@ body {
   }
 }
 
-
 /* =========================================================
-   RESPONSIVE SYSTEM
-   PC → Tablet → Mobile Large → Mobile Small
+   RESPONSIVE BREAKPOINTS
    ========================================================= */
 
-/* ============================
-   TABLET (≤ 1024px)
-   ============================ */
+/* TABLET ≤1024px */
 @media (max-width: 1024px) {
-  .navBar {
-    padding: 20px 28px;
-  }
-
   .hero,
   .heroSmall {
     padding: 130px 20px 100px;
@@ -259,7 +253,6 @@ body {
 
   .heroSubtitle {
     font-size: 19px;
-    max-width: 90%;
   }
 
   .section,
@@ -270,31 +263,20 @@ body {
   .sectionTitle {
     font-size: 34px;
   }
-
-  .sectionLead {
-    font-size: 18px;
-  }
-
-  .card {
-    padding: 28px;
-  }
 }
 
-/* ============================
-   MOBILE LARGE (≤ 768px)
-   ============================ */
+/* MOBILE LARGE ≤768px */
 @media (max-width: 768px) {
-  /* NAV */
   .navInner {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .navLinks {
-    margin-top: 14px;
+    margin-top: 12px;
     display: flex;
     flex-wrap: wrap;
-    gap: 14px 20px;
+    gap: 12px 18px;
   }
 
   .navLinks a {
@@ -302,107 +284,40 @@ body {
     font-size: 15px;
   }
 
-  /* HERO */
-  .hero,
-  .heroSmall {
-    padding: 110px 20px 80px;
-  }
-
-  .tagLine {
-    font-size: 12px;
-    letter-spacing: 2px;
-  }
-
   .heroTitle {
     font-size: 42px;
-    line-height: 1.15;
   }
 
   .heroSubtitle {
-    font-size: 16px;
+    font-size: 17px;
     max-width: 95%;
   }
 
   .ctaRow a {
     padding: 12px 24px;
-    font-size: 14px;
-    margin-right: 10px;
-  }
-
-  /* SECTIONS */
-  .section,
-  .sectionWide {
-    padding: 70px 20px;
   }
 
   .sectionTitle {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .sectionLead {
-    font-size: 16px;
-    margin-bottom: 40px;
-    max-width: 95%;
-  }
-
-  /* GRID & CARDS */
-  .grid {
-    gap: 24px;
-  }
-
-  .card {
-    padding: 24px;
-    border-radius: 12px;
-  }
-
-  .cardTitle {
-    font-size: 18px;
-  }
-
-  .cardText {
-    font-size: 15px;
-  }
-
-  /* FOOTER */
-  .footer {
-    padding: 32px;
-  }
-
-  .footerInner {
-    font-size: 13px;
+    font-size: 17px;
   }
 }
 
-/* ============================
-   MOBILE SMALL (≤ 480px)
-   ============================ */
+/* MOBILE SMALL ≤480px */
 @media (max-width: 480px) {
-  /* NAV */
   .brand {
     font-size: 22px;
-  }
-
-  .navLinks {
-    gap: 10px 14px;
   }
 
   .navLinks a {
     font-size: 13px;
   }
 
-  /* HERO */
-  .hero,
-  .heroSmall {
-    padding: 90px 16px 70px;
-  }
-
-  .tagLine {
-    font-size: 11px;
-  }
-
   .heroTitle {
     font-size: 32px;
-    letter-spacing: -0.5px;
   }
 
   .heroSubtitle {
@@ -410,44 +325,12 @@ body {
   }
 
   .ctaRow a {
-    font-size: 13px;
     padding: 10px 20px;
-  }
-
-  /* SECTIONS */
-  .section,
-  .sectionWide {
-    padding: 60px 18px;
+    font-size: 13px;
   }
 
   .sectionTitle {
     font-size: 22px;
-  }
-
-  .sectionLead {
-    font-size: 15px;
-  }
-
-  /* CARDS */
-  .card {
-    padding: 20px;
-  }
-
-  .cardTitle {
-    font-size: 16px;
-  }
-
-  .cardText {
-    font-size: 14px;
-  }
-
-  /* FOOTER */
-  .footer {
-    padding: 26px;
-  }
-
-  .footerInner {
-    font-size: 12px;
   }
 }
 
