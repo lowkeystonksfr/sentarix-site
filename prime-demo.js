@@ -1,46 +1,42 @@
 // prime-demo.js
-// Visual-only demo. No real SentariX logic, just simulated jitter vs perfect dt.
+// Visual-only demos. No real SentariX logic – just simulated jitter vs perfect cadence.
 
+/* -------------------------------------------------------
+   DEMO 1 — Jitter vs Prime chart
+------------------------------------------------------- */
 (function () {
   const canvas = document.getElementById("prime-demo-canvas");
-  if (!canvas) return; // safety if loaded on other pages
+  if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
 
-  const N = 260; // number of samples shown
-  const BASE_DT = 7812; // µs
-  const RAW_JITTER = 5500; // +/- jitter
+  const N = 260;                  // samples on screen
+  const BASE_DT = 7812;           // µs
+  const RAW_JITTER = 5500;        // +/- jitter range
 
   const rawSeries = new Array(N).fill(BASE_DT);
-  const sxSeries = new Array(N).fill(BASE_DT);
+  const sxSeries  = new Array(N).fill(BASE_DT);
 
   let running = false;
 
   const startBtn = document.getElementById("prime-demo-start");
-  const stopBtn = document.getElementById("prime-demo-stop");
+  const stopBtn  = document.getElementById("prime-demo-stop");
 
-  if (startBtn) {
-    startBtn.addEventListener("click", () => {
-      if (!running) {
-        running = true;
-        tick();
-      }
-    });
-  }
+  startBtn?.addEventListener("click", () => {
+    if (!running) {
+      running = true;
+      tick();
+    }
+  });
 
-  if (stopBtn) {
-    stopBtn.addEventListener("click", () => {
-      running = false;
-    });
-  }
+  stopBtn?.addEventListener("click", () => {
+    running = false;
+  });
 
   function pushSample() {
-    // RAW = base + jitter (unstable cadence)
     const jitter = (Math.random() - 0.5) * 2 * RAW_JITTER;
-    const rawDt = BASE_DT + jitter;
-
-    // SentariX = perfectly stable cadence
-    const sxDt = BASE_DT;
+    const rawDt  = BASE_DT + jitter;
+    const sxDt   = BASE_DT;
 
     rawSeries.push(rawDt);
     sxSeries.push(sxDt);
@@ -52,9 +48,10 @@
   function draw() {
     const w = canvas.width;
     const h = canvas.height;
+
     ctx.clearRect(0, 0, w, h);
 
-    // dark background
+    // background
     ctx.fillStyle = "#050509";
     ctx.fillRect(0, 0, w, h);
 
@@ -67,16 +64,15 @@
     ctx.lineTo(w - 10, h - 30);
     ctx.stroke();
 
-    // y-range (microseconds)
     const minY = BASE_DT - RAW_JITTER;
     const maxY = BASE_DT + RAW_JITTER;
 
-    function yFor(v) {
+    const yFor = (v) => {
       const t = (v - minY) / (maxY - minY);
       return (1 - t) * (h - 50) + 20;
-    }
+    };
 
-    // grid line for BASE_DT (SentariX target)
+    // base line (Prime cadence)
     ctx.strokeStyle = "#444";
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
@@ -86,7 +82,7 @@
     ctx.stroke();
     ctx.setLineDash([]);
 
-    // RAW line (red, noisy)
+    // RAW line
     ctx.strokeStyle = "#ff4444";
     ctx.lineWidth = 1.2;
     ctx.beginPath();
@@ -98,7 +94,7 @@
     }
     ctx.stroke();
 
-    // SentariX line (blue, perfectly flat)
+    // Prime line
     ctx.strokeStyle = "#44aaff";
     ctx.lineWidth = 1.8;
     ctx.beginPath();
@@ -115,10 +111,12 @@
     ctx.font = "12px system-ui, -apple-system, BlinkMacSystemFont, sans-serif";
     ctx.fillText("Event interval (microseconds)", 44, 18);
     ctx.fillText("RAW jitter", 50, 32);
+
     ctx.fillStyle = "#ff6666";
-    ctx.fillText("RAW", w - 80, 28);
+    ctx.fillText("RAW", w - 70, 40);
+
     ctx.fillStyle = "#44aaff";
-    ctx.fillText("SentariX Prime™", w - 160, h - 10);
+    ctx.fillText("SentariX Prime™", w - 155, h - 10);
   }
 
   function tick() {
@@ -128,6 +126,130 @@
     requestAnimationFrame(tick);
   }
 
-  // initial frame
+  // initial render
+  draw();
+})();
+
+/* -------------------------------------------------------
+   DEMO 2 — Your timing vs Prime (interactive taps)
+------------------------------------------------------- */
+(function () {
+  const canvas = document.getElementById("prime-input-canvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  const taps = [];         // raw tap timestamps (ms from start)
+  const MAX_TAPS = 40;
+
+  const BASE_DT = 7812;    // µs, just for the Prime lane spacing
+
+  let capturing = false;
+  let startTime = 0;
+
+  const startBtn = document.getElementById("prime-input-start");
+  const resetBtn = document.getElementById("prime-input-reset");
+
+  startBtn?.addEventListener("click", () => {
+    taps.length = 0;
+    startTime = performance.now();
+    capturing = true;
+    draw();
+  });
+
+  resetBtn?.addEventListener("click", () => {
+    capturing = false;
+    taps.length = 0;
+    draw();
+  });
+
+  function registerTap() {
+    if (!capturing) return;
+    const now = performance.now();
+    const t = now - startTime;
+    if (taps.length === 0 || t > taps[taps.length - 1]) {
+      taps.push(t);
+      if (taps.length > MAX_TAPS) taps.shift();
+      draw();
+    }
+  }
+
+  // spacebar
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+      e.preventDefault();
+      registerTap();
+    }
+  });
+
+  // mouse / touch
+  window.addEventListener("pointerdown", () => {
+    registerTap();
+  });
+
+  function draw() {
+    const w = canvas.width;
+    const h = canvas.height;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // background
+    ctx.fillStyle = "#050509";
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.fillStyle = "#bbbbbb";
+    ctx.font = "12px system-ui, -apple-system, BlinkMacSystemFont, sans-serif";
+    ctx.fillText("Each dot is one of your taps mapped over time.", 40, 24);
+
+    // lanes
+    const laneRawY = h * 0.35;
+    const laneSxY  = h * 0.7;
+
+    ctx.strokeStyle = "#333";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(40, laneRawY);
+    ctx.lineTo(w - 30, laneRawY);
+    ctx.moveTo(40, laneSxY);
+    ctx.lineTo(w - 30, laneSxY);
+    ctx.stroke();
+
+    ctx.fillStyle = "#ff6666";
+    ctx.fillText("RAW – your actual timing", 44, laneRawY - 10);
+
+    ctx.fillStyle = "#44aaff";
+    ctx.fillText("SentariX Prime™ – even cadence", 44, laneSxY - 10);
+
+    if (taps.length === 0) {
+      ctx.fillStyle = "#777";
+      ctx.fillText("Tap Start, then press Space or click to send events.", 44, h - 16);
+      return;
+    }
+
+    const first = taps[0];
+    const last  = taps[taps.length - 1] || first;
+    const span  = Math.max(last - first, 1);
+
+    // RAW dots: based on your uneven timing
+    ctx.fillStyle = "#ff4444";
+    for (let i = 0; i < taps.length; i++) {
+      const t = taps[i] - first;
+      const x = 40 + (t / span) * (w - 80);
+      ctx.beginPath();
+      ctx.arc(x, laneRawY, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // PRIME dots: same count, perfectly even spacing
+    ctx.fillStyle = "#44aaff";
+    const count = taps.length;
+    for (let i = 0; i < count; i++) {
+      const x = 40 + (i / Math.max(count - 1, 1)) * (w - 80);
+      ctx.beginPath();
+      ctx.arc(x, laneSxY, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // initial render (empty state)
   draw();
 })();
