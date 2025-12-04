@@ -424,3 +424,48 @@ body {
     font-size: 12px;
   }
 }
+
+.prime-demo {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #050509;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.prime-demo-controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.prime-demo-controls button {
+  padding: 0.375rem 0.9rem;
+  background: #14141f;
+  color: #f5f5ff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.prime-demo-controls button:hover {
+  background: #1f1f2a;
+}
+
+.prime-demo-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #c6c6d9;
+}
+
+.prime-demo-label.raw {
+  color: #ff6666;
+  font-weight: 600;
+}
+
+.prime-demo-label.sx {
+  color: #4db0ff;
+  font-weight: 600;
+}
+
