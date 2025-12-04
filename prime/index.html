@@ -222,15 +222,18 @@
           </div>
         </section>
 
-        <!-- DEMO -->
+                <!-- DEMO -->
         <section id="demo" class="section">
           <h2 class="sectionTitle">Demo Preview</h2>
 
           <p class="sectionLead">
-            Below is a simple demonstration showing how inconsistent spacing feels compared to Prime’s perfectly even cadence.
+            Two simple visuals showing how inconsistency appears, and how Prime keeps cadence perfectly even.
           </p>
 
-          <div class="prime-demo">
+          <!-- Demo 1: Jitter vs Prime chart -->
+          <div class="prime-demo" style="margin-bottom: 32px;">
+            <h3 class="cardTitle" style="margin-bottom: 12px;">Event interval stability</h3>
+
             <div class="prime-demo-controls">
               <button id="prime-demo-start">Start demo</button>
               <button id="prime-demo-stop">Stop</button>
@@ -241,6 +244,26 @@
             <p class="prime-demo-caption">
               <span class="prime-demo-label raw">RAW</span> – unstable event spacing (jitter).<br>
               <span class="prime-demo-label sx">SentariX Prime™</span> – perfectly even event cadence.
+            </p>
+          </div>
+
+          <!-- Demo 2: Your timing vs Prime -->
+          <div class="prime-demo">
+            <h3 class="cardTitle" style="margin-bottom: 12px;">Your timing vs Prime</h3>
+
+            <div class="prime-demo-controls">
+              <button id="prime-input-start">Start capture</button>
+              <button id="prime-input-reset">Reset</button>
+              <span class="prime-demo-hint">
+                Once started, tap the spacebar or click anywhere to send events.
+              </span>
+            </div>
+
+            <canvas id="prime-input-canvas" width="900" height="220"></canvas>
+
+            <p class="prime-demo-caption">
+              <span class="prime-demo-label raw">RAW</span> – your actual tap spacing.<br>
+              <span class="prime-demo-label sx">SentariX Prime™</span> – the same taps aligned to a perfectly even cadence.
             </p>
           </div>
 
