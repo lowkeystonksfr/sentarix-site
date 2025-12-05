@@ -1,28 +1,125 @@
-<form class="contactForm" action="/submit-contact" method="post" style="margin-top:40px; max-width: 520px; width: 100%; display: flex; flex-direction: column; gap: 22px;">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SentariX | Contact</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-  <div class="formGroup">
-    <label class="formLabel">Name</label>
-    <input class="formInput" type="text" name="name" required />
-  </div>
+  <body>
+    <div class="pageShell">
 
-  <div class="formGroup">
-    <label class="formLabel">Email</label>
-    <input class="formInput" type="email" name="email" required />
-  </div>
+      <!-- HEADER -->
+      <header class="navBar">
+        <div class="navInner">
+          <div class="brand">SentariX</div>
+          <nav class="navLinks">
+            <a href="/">Home</a>
+            <a href="/prime/">Prime</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-  <div class="formGroup">
-    <label class="formLabel">Organization</label>
-    <input class="formInput" type="text" name="organization" />
-  </div>
+      <!-- MAIN -->
+      <main class="mainContent">
 
-  <div class="formGroup">
-    <label class="formLabel">Message</label>
-    <textarea class="formTextarea" name="message" rows="6" required></textarea>
-  </div>
+        <!-- HERO -->
+        <section class="heroSmall">
+          <div class="tagLine">Get in touch</div>
+          <h1 class="heroTitle">Contact SentariX</h1>
 
-  <button class="btnPrimary" type="submit" style="margin-top:10px;">
-    Send message
-  </button>
+          <p class="heroSubtitle">
+            SentariX works with teams evaluating stability layers for real time systems.
+            For evaluation access, enterprise discussions, or collaboration inquiries,
+            reach out through the form below.
+          </p>
+        </section>
 
-</form>
+        <!-- OVERVIEW -->
+        <section class="section">
+          <h2 class="sectionTitle">How we work with teams</h2>
+
+          <p class="sectionLead">
+            SentariX provides evaluation builds and technical discussions on a selective basis.
+            Conversations commonly include:
+          </p>
+
+          <div class="grid" style="margin-top:40px;">
+            <div class="card">
+              <h3 class="cardTitle">Technical review under NDA</h3>
+              <p class="cardText">
+                Private discussions regarding requirements, integration paths, and evaluation scope.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="cardTitle">Evaluation access</h3>
+              <p class="cardText">
+                Sealed builds for assessing Prime in real environments and measuring stability improvements.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="cardTitle">Collaboration</h3>
+              <p class="cardText">
+                Coordination with studios, platforms, and teams working on real time systems.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section class="sectionWide">
+          <h2 class="sectionTitle">Send a message</h2>
+
+          <p class="sectionLead" style="max-width:760px;">
+            Share a brief overview of your team and how you are considering SentariX.
+            Our team will respond to qualified inquiries.
+          </p>
+
+          <!-- CLEAN STACKED FORM -->
+          <form action="/submit-contact" method="post" 
+                style="max-width: 520px; margin: 50px auto 0; display: flex; flex-direction: column; gap: 24px;">
+
+            <div class="formGroup">
+              <label class="formLabel">Name</label>
+              <input class="formInput" type="text" name="name" required />
+            </div>
+
+            <div class="formGroup">
+              <label class="formLabel">Email</label>
+              <input class="formInput" type="email" name="email" required />
+            </div>
+
+            <div class="formGroup">
+              <label class="formLabel">Organization</label>
+              <input class="formInput" type="text" name="organization" />
+            </div>
+
+            <div class="formGroup">
+              <label class="formLabel">Message</label>
+              <textarea class="formTextarea" name="message" rows="6" required></textarea>
+            </div>
+
+            <button class="btnPrimary" type="submit" style="margin-top:10px;">
+              Send message
+            </button>
+
+          </form>
+        </section>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footerInner">
+          © <span id="year"></span> 2025 SentariX Inc. The Standard of Consistency™
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>
 
