@@ -1,10 +1,10 @@
 /* =========================================================
-   RESET
+   GLOBAL FIXES (PREVENT MOBILE AUTO-SCALING)
    ========================================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -13,6 +13,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 .pageShell {
@@ -23,6 +25,7 @@ body {
 /* =========================================================
    NAVIGATION
    ========================================================= */
+
 .navBar {
   padding: 26px 48px;
   background: rgba(0, 0, 0, 0.4);
@@ -37,7 +40,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* prevents Safari reflow zoom */
 }
 
 .brand {
@@ -47,6 +49,7 @@ body {
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
+
 .brand:hover {
   opacity: 0.7;
 }
@@ -59,19 +62,20 @@ body {
   font-size: 17px;
   transition: color 0.3s ease;
 }
+
 .navLinks a:hover {
   color: #fff;
 }
 
 /* =========================================================
-   HERO SECTIONS
+   HERO SECTIONS (NORMALIZED)
    ========================================================= */
+
 .hero,
 .heroSmall {
   text-align: center;
-  padding: 150px 24px 120px;
+  padding: 140px 24px 90px;
   animation: fadeIn 1.2s ease-out both;
-  max-width: 100%; /* prevents auto zoom-out */
 }
 
 .tagLine {
@@ -83,12 +87,10 @@ body {
 
 .heroTitle {
   margin-top: 22px;
+  font-size: 78px;
   font-weight: 900;
   letter-spacing: -1.5px;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.04);
-
-  /* KEY FIX: prevents mobile zoom-out */
-  font-size: clamp(32px, 8vw, 78px);
 }
 
 .heroSubtitle {
@@ -97,14 +99,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   color: #d6d6d6;
-  font-size: clamp(15px, 2.3vw, 22px);
+  font-size: 22px;
   line-height: 1.7;
   opacity: 0.9;
 }
 
 /* =========================================================
-   CTA ROW
+   CTA BUTTONS
    ========================================================= */
+
 .ctaRow {
   margin-top: 55px;
   display: flex;
@@ -130,6 +133,7 @@ body {
   color: #000;
   box-shadow: 0 6px 28px rgba(255, 255, 255, 0.10);
 }
+
 .btnPrimary:hover {
   transform: translateY(-2px);
   opacity: 0.92;
@@ -140,6 +144,7 @@ body {
   color: #fff;
   background: rgba(255, 255, 255, 0.03);
 }
+
 .btnGhost:hover {
   background: #fff;
   color: #000;
@@ -147,8 +152,9 @@ body {
 }
 
 /* =========================================================
-   SECTIONS
+   CONTENT SECTIONS
    ========================================================= */
+
 .section,
 .sectionWide {
   padding: 130px 24px;
@@ -162,7 +168,7 @@ body {
 }
 
 .sectionTitle {
-  font-size: clamp(24px, 5vw, 42px);
+  font-size: 42px;
   text-align: center;
   margin-bottom: 40px;
   font-weight: 800;
@@ -174,7 +180,7 @@ body {
   text-align: center;
   margin: 0 auto 90px;
   color: #cfcfcf;
-  font-size: clamp(15px, 2.2vw, 21px);
+  font-size: 21px;
   line-height: 1.7;
   opacity: 0.9;
 }
@@ -182,6 +188,7 @@ body {
 /* =========================================================
    GRID + CARDS
    ========================================================= */
+
 .grid {
   display: grid;
   gap: 48px;
@@ -196,6 +203,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(255, 255, 255, 0.08);
@@ -214,27 +222,25 @@ body {
 }
 
 /* =========================================================
-   CONTACT PAGE — EMAIL CTA
+   FOOTER
    ========================================================= */
-.contactCTA {
-  margin-top: 30px;
+
+.footer {
+  padding: 60px;
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 120px;
 }
 
-.contactCTA a {
-  font-size: 20px;
-  color: #4db0ff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.contactCTA a:hover {
+.footerInner {
   opacity: 0.7;
+  font-size: 14px;
 }
 
 /* =========================================================
    PRIME DEMO
    ========================================================= */
+
 .prime-demo {
   margin-top: 1.5rem;
   padding: 1.5rem;
@@ -258,6 +264,7 @@ body {
   font-size: 0.85rem;
   cursor: pointer;
 }
+
 .prime-demo-controls button:hover {
   background: #1f1f2a;
 }
@@ -272,52 +279,62 @@ body {
   color: #ff6666;
   font-weight: 600;
 }
+
 .prime-demo-label.sx {
   color: #4db0ff;
 }
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
-.footer {
-  padding: 60px;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 120px;
-}
-
-.footerInner {
-  opacity: 0.7;
-  font-size: 14px;
-}
-
-/* =========================================================
    ANIMATIONS
    ========================================================= */
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(25px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   RESPONSIVE (TABLET)
    ========================================================= */
+
 @media (max-width: 1024px) {
-  .navBar { padding: 22px 32px; }
+  body {
+    line-height: 1.65;
+  }
 
   .hero,
-  .heroSmall { padding: 130px 22px 100px; }
+  .heroSmall {
+    padding: 130px 22px 90px;
+  }
+
+  .heroTitle {
+    font-size: 62px;
+  }
+
+  .heroSubtitle {
+    font-size: 19px;
+  }
 
   .section,
-  .sectionWide { padding: 110px 22px; }
-
-  .card { padding: 38px; }
+  .sectionWide {
+    padding: 110px 22px;
+  }
 }
 
 /* =========================================================
-   RESPONSIVE — MOBILE LARGE (≤768px)
+   MOBILE LARGE ≤ 768px
    ========================================================= */
+
 @media (max-width: 768px) {
+  body {
+    line-height: 1.6;
+  }
 
   .navInner {
     flex-direction: column;
@@ -331,7 +348,9 @@ body {
     flex-wrap: wrap;
   }
 
-  .brand { font-size: 24px; }
+  .brand {
+    font-size: 24px;
+  }
 
   .navLinks a {
     margin-left: 0;
@@ -340,68 +359,43 @@ body {
 
   .hero,
   .heroSmall {
-    padding: 110px 22px 80px;
+    padding: 120px 22px 80px;
   }
 
-  .section,
-  .sectionWide {
-    padding: 90px 22px;
+  .heroTitle {
+    font-size: 40px;
   }
 
-  .card {
-    padding: 32px;
-    border-radius: 20px;
+  .heroSubtitle {
+    font-size: 17px;
+    max-width: 95%;
   }
 
-  .ctaRow {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .ctaRow a {
-    width: 100%;
-    max-width: 260px;
-    text-align: center;
-  }
-
-  .footer {
-    padding: 40px 22px;
-    margin-top: 90px;
+  .sectionTitle {
+    font-size: 30px;
   }
 }
 
 /* =========================================================
-   RESPONSIVE — MOBILE SMALL (≤480px)
+   MOBILE SMALL ≤ 480px
    ========================================================= */
+
 @media (max-width: 480px) {
-
-  .brand { font-size: 22px; }
-
   .hero,
   .heroSmall {
-    padding: 100px 18px 70px;
+    padding: 110px 18px 70px;
   }
 
-  .section,
-  .sectionWide {
-    padding: 80px 18px;
+  .heroTitle {
+    font-size: 32px;
   }
 
-  .card {
-    padding: 26px;
-    border-radius: 18px;
+  .heroSubtitle {
+    font-size: 15px;
   }
 
-  .cardTitle { font-size: 18px; }
-  .cardText  { font-size: 15px; }
-
-  .ctaRow { gap: 12px; }
-
-  .ctaRow a { max-width: 240px; }
-
-  .footer {
-    padding: 32px 18px;
-    margin-top: 70px;
+  .sectionTitle {
+    font-size: 24px;
   }
 }
 
