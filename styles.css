@@ -1,4 +1,6 @@
-/* Reset */
+/* =========================================================
+   RESET
+   ========================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +20,9 @@ body {
   overflow-x: hidden;
 }
 
-/* NAV */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 .navBar {
   padding: 26px 48px;
   background: rgba(0, 0, 0, 0.4);
@@ -33,6 +37,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%; /* prevents Safari reflow zoom */
 }
 
 .brand {
@@ -42,7 +47,6 @@ body {
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
-
 .brand:hover {
   opacity: 0.7;
 }
@@ -53,19 +57,21 @@ body {
   color: #ccc;
   font-weight: 500;
   font-size: 17px;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease;
 }
-
 .navLinks a:hover {
   color: #fff;
 }
 
-/* HERO */
+/* =========================================================
+   HERO SECTIONS
+   ========================================================= */
 .hero,
 .heroSmall {
   text-align: center;
-  padding: 170px 24px 130px;
+  padding: 150px 24px 120px;
   animation: fadeIn 1.2s ease-out both;
+  max-width: 100%; /* prevents auto zoom-out */
 }
 
 .tagLine {
@@ -77,10 +83,12 @@ body {
 
 .heroTitle {
   margin-top: 22px;
-  font-size: 78px;
   font-weight: 900;
   letter-spacing: -1.5px;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.04);
+
+  /* KEY FIX: prevents mobile zoom-out */
+  font-size: clamp(32px, 8vw, 78px);
 }
 
 .heroSubtitle {
@@ -89,12 +97,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   color: #d6d6d6;
-  font-size: 22px;
+  font-size: clamp(15px, 2.3vw, 22px);
   line-height: 1.7;
   opacity: 0.9;
 }
 
-/* CTA ROW (desktop) */
+/* =========================================================
+   CTA ROW
+   ========================================================= */
 .ctaRow {
   margin-top: 55px;
   display: flex;
@@ -104,7 +114,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* BUTTONS */
 .btnPrimary,
 .btnGhost {
   padding: 15px 38px;
@@ -121,7 +130,6 @@ body {
   color: #000;
   box-shadow: 0 6px 28px rgba(255, 255, 255, 0.10);
 }
-
 .btnPrimary:hover {
   transform: translateY(-2px);
   opacity: 0.92;
@@ -132,14 +140,15 @@ body {
   color: #fff;
   background: rgba(255, 255, 255, 0.03);
 }
-
 .btnGhost:hover {
   background: #fff;
   color: #000;
   transform: translateY(-2px);
 }
 
-/* SECTIONS */
+/* =========================================================
+   SECTIONS
+   ========================================================= */
 .section,
 .sectionWide {
   padding: 130px 24px;
@@ -153,7 +162,7 @@ body {
 }
 
 .sectionTitle {
-  font-size: 42px;
+  font-size: clamp(24px, 5vw, 42px);
   text-align: center;
   margin-bottom: 40px;
   font-weight: 800;
@@ -165,12 +174,14 @@ body {
   text-align: center;
   margin: 0 auto 90px;
   color: #cfcfcf;
-  font-size: 21px;
+  font-size: clamp(15px, 2.2vw, 21px);
   line-height: 1.7;
   opacity: 0.9;
 }
 
-/* GRID + CARDS */
+/* =========================================================
+   GRID + CARDS
+   ========================================================= */
 .grid {
   display: grid;
   gap: 48px;
@@ -185,7 +196,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(255, 255, 255, 0.08);
@@ -203,228 +213,28 @@ body {
   font-size: 17px;
 }
 
-/* FOOTER */
-.footer {
-  padding: 60px;
+/* =========================================================
+   CONTACT PAGE — EMAIL CTA
+   ========================================================= */
+.contactCTA {
+  margin-top: 30px;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 120px;
 }
 
-.footerInner {
+.contactCTA a {
+  font-size: 20px;
+  color: #4db0ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.contactCTA a:hover {
   opacity: 0.7;
-  font-size: 14px;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVE */
-
-/* TABLET ≤1024px */
-@media (max-width: 1024px) {
-  .navBar {
-    padding: 22px 32px;
-  }
-
-  .hero,
-  .heroSmall {
-    padding: 150px 22px 110px;
-  }
-
-  .heroTitle {
-    font-size: 62px;
-  }
-
-  .heroSubtitle {
-    font-size: 19px;
-  }
-
-  .section,
-  .sectionWide {
-    padding: 110px 22px;
-  }
-
-  .sectionTitle {
-    font-size: 36px;
-  }
-
-  .sectionLead {
-    font-size: 19px;
-    margin-bottom: 70px;
-  }
-
-  .card {
-    padding: 38px;
-  }
-}
-
-/* MOBILE LARGE ≤768px */
-@media (max-width: 768px) {
-  .navInner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navLinks {
-    margin-top: 12px;
-    display: flex;
-    gap: 14px 18px;
-    flex-wrap: wrap;
-  }
-
-  .brand {
-    font-size: 24px;
-  }
-
-  .navLinks a {
-    margin-left: 0;
-    font-size: 15px;
-  }
-
-  .hero,
-  .heroSmall {
-    padding: 120px 22px 80px;
-  }
-
-  .heroTitle {
-    font-size: 44px;
-  }
-
-  .heroSubtitle {
-    font-size: 17px;
-    max-width: 95%;
-  }
-
-  .section,
-  .sectionWide {
-    padding: 90px 22px;
-  }
-
-  .sectionTitle {
-    font-size: 30px;
-    margin-bottom: 30px;
-  }
-
-  .sectionLead {
-    font-size: 17px;
-    margin-bottom: 55px;
-    max-width: 95%;
-  }
-
-  .grid {
-    gap: 32px;
-  }
-
-  .card {
-    padding: 32px;
-    border-radius: 20px;
-  }
-
-  .cardTitle {
-    font-size: 20px;
-  }
-
-  .cardText {
-    font-size: 16px;
-  }
-
-  /* CTA: stack, no touching */
-  .ctaRow {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .ctaRow a {
-    width: 100%;
-    max-width: 260px;
-    text-align: center;
-  }
-
-  .footer {
-    padding: 40px 22px;
-    margin-top: 90px;
-  }
-
-  .footerInner {
-    font-size: 13px;
-  }
-}
-
-/* MOBILE SMALL ≤480px */
-@media (max-width: 480px) {
-  .brand {
-    font-size: 22px;
-  }
-
-  .hero,
-  .heroSmall {
-    padding: 110px 18px 70px;
-  }
-
-  .heroTitle {
-    font-size: 34px;
-  }
-
-  .heroSubtitle {
-    font-size: 15px;
-  }
-
-  .section,
-  .sectionWide {
-    padding: 80px 18px;
-  }
-
-  .sectionTitle {
-    font-size: 24px;
-  }
-
-  .sectionLead {
-    font-size: 15px;
-    margin-bottom: 45px;
-  }
-
-  .card {
-    padding: 26px;
-    border-radius: 18px;
-  }
-
-  .cardTitle {
-    font-size: 18px;
-  }
-
-  .cardText {
-    font-size: 15px;
-  }
-
-  .ctaRow {
-    gap: 12px;
-  }
-
-  .ctaRow a {
-    max-width: 240px;
-  }
-
-  .footer {
-    padding: 32px 18px;
-    margin-top: 70px;
-  }
-
-  .footerInner {
-    font-size: 12px;
-  }
-}
-
+/* =========================================================
+   PRIME DEMO
+   ========================================================= */
 .prime-demo {
   margin-top: 1.5rem;
   padding: 1.5rem;
@@ -448,7 +258,6 @@ body {
   font-size: 0.85rem;
   cursor: pointer;
 }
-
 .prime-demo-controls button:hover {
   background: #1f1f2a;
 }
@@ -462,6 +271,138 @@ body {
 .prime-demo-label.raw {
   color: #ff6666;
   font-weight: 600;
+}
+.prime-demo-label.sx {
+  color: #4db0ff;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  padding: 60px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 120px;
+}
+
+.footerInner {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+@media (max-width: 1024px) {
+  .navBar { padding: 22px 32px; }
+
+  .hero,
+  .heroSmall { padding: 130px 22px 100px; }
+
+  .section,
+  .sectionWide { padding: 110px 22px; }
+
+  .card { padding: 38px; }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE LARGE (≤768px)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  .navInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navLinks {
+    margin-top: 12px;
+    display: flex;
+    gap: 14px 18px;
+    flex-wrap: wrap;
+  }
+
+  .brand { font-size: 24px; }
+
+  .navLinks a {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .hero,
+  .heroSmall {
+    padding: 110px 22px 80px;
+  }
+
+  .section,
+  .sectionWide {
+    padding: 90px 22px;
+  }
+
+  .card {
+    padding: 32px;
+    border-radius: 20px;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .ctaRow a {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 40px 22px;
+    margin-top: 90px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE SMALL (≤480px)
+   ========================================================= */
+@media (max-width: 480px) {
+
+  .brand { font-size: 22px; }
+
+  .hero,
+  .heroSmall {
+    padding: 100px 18px 70px;
+  }
+
+  .section,
+  .sectionWide {
+    padding: 80px 18px;
+  }
+
+  .card {
+    padding: 26px;
+    border-radius: 18px;
+  }
+
+  .cardTitle { font-size: 18px; }
+  .cardText  { font-size: 15px; }
+
+  .ctaRow { gap: 12px; }
+
+  .ctaRow a { max-width: 240px; }
+
+  .footer {
+    padding: 32px 18px;
+    margin-top: 70px;
+  }
 }
 
 .prime-demo-label.sx {
