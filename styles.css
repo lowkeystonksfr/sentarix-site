@@ -1,22 +1,15 @@
 /* =========================================================
-   RESET / GLOBAL
+   RESET + BASE
    ========================================================= */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-
-  /* Prevent iOS/Safari/Chrome auto text zoom differences */
-  -webkit-text-size-adjust: 100% !important;
-  text-size-adjust: 100% !important;
+html {
+  /* Fixes mobile scaling inconsistencies */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -33,9 +26,8 @@ body {
 }
 
 /* =========================================================
-   NAVIGATION
+   NAV
    ========================================================= */
-
 .navBar {
   padding: 26px 48px;
   background: rgba(0, 0, 0, 0.4);
@@ -50,7 +42,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
 .brand {
@@ -71,7 +62,7 @@ body {
   color: #ccc;
   font-weight: 500;
   font-size: 17px;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .navLinks a:hover {
@@ -79,13 +70,18 @@ body {
 }
 
 /* =========================================================
-   HERO (UNIFIED ACROSS ALL PAGES)
+   HERO — FULLY NORMALIZED ACROSS ALL PAGES
    ========================================================= */
 
 .hero,
 .heroSmall {
+  padding: 140px 24px 100px !important;
   text-align: center;
-  padding: 140px 24px 110px !important; /* unify desktop heroes */
+
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
   animation: fadeIn 1.2s ease-out both;
 }
 
@@ -94,32 +90,31 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
   opacity: 0.6;
+  margin-bottom: 18px;
 }
 
 .heroTitle {
-  margin-top: 22px;
-  font-size: 64px; /* Option B: refined, compact hero */
+  margin-top: 10px;
+  font-size: 44px;
   font-weight: 900;
-  letter-spacing: -1.5px;
-  line-height: 1.05;
+  letter-spacing: -1px;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.04);
 }
 
 .heroSubtitle {
-  margin-top: 30px;
+  margin-top: 28px;
   max-width: 820px;
   margin-left: auto;
   margin-right: auto;
   color: #d6d6d6;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.7;
   opacity: 0.9;
 }
 
 /* =========================================================
-   CTA BUTTONS
+   CTA ROW
    ========================================================= */
-
 .ctaRow {
   margin-top: 55px;
   display: flex;
@@ -132,7 +127,6 @@ body {
 .btnPrimary,
 .btnGhost {
   padding: 15px 38px;
-  display: inline-block;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -164,9 +158,8 @@ body {
 }
 
 /* =========================================================
-   CONTENT SECTIONS
+   SECTIONS + GRID
    ========================================================= */
-
 .section,
 .sectionWide {
   padding: 130px 24px;
@@ -184,7 +177,6 @@ body {
   text-align: center;
   margin-bottom: 40px;
   font-weight: 800;
-  letter-spacing: -0.6px;
 }
 
 .sectionLead {
@@ -196,10 +188,6 @@ body {
   line-height: 1.7;
   opacity: 0.9;
 }
-
-/* =========================================================
-   GRID + CARDS
-   ========================================================= */
 
 .grid {
   display: grid;
@@ -234,56 +222,8 @@ body {
 }
 
 /* =========================================================
-   PRIME DEMO
-   ========================================================= */
-
-.prime-demo {
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  background: #050509;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.prime-demo-controls {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.prime-demo-controls button {
-  padding: 0.375rem 0.9rem;
-  background: #14141f;
-  color: #f5f5ff;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.prime-demo-controls button:hover {
-  background: #1f1f2a;
-}
-
-.prime-demo-caption {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  color: #c6c6d9;
-}
-
-.prime-demo-label.raw {
-  color: #ff6666;
-  font-weight: 600;
-}
-
-.prime-demo-label.sx {
-  color: #4db0ff;
-}
-
-/* =========================================================
    FOOTER
    ========================================================= */
-
 .footer {
   padding: 60px;
   text-align: center;
@@ -299,7 +239,6 @@ body {
 /* =========================================================
    ANIMATIONS
    ========================================================= */
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -312,130 +251,49 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE — TABLET (≤ 1024px)
+   MOBILE RESPONSIVE
    ========================================================= */
 
+/* TABLET ≤1024px */
 @media (max-width: 1024px) {
-  body {
-    line-height: 1.65;
+  .navBar { padding: 22px 32px; }
+
+  .hero, .heroSmall {
+    padding-top: 130px !important;
+    padding-bottom: 90px !important;
   }
 
-  .navBar {
-    padding: 22px 32px;
-  }
+  .heroTitle { font-size: 38px !important; }
+  .heroSubtitle { font-size: 19px; }
 
-  .hero,
-  .heroSmall {
-    padding: 130px 22px 90px !important;
-  }
-
-  .heroTitle {
-    font-size: 52px;
-  }
-
-  .heroSubtitle {
-    font-size: 18px;
-  }
-
-  .section,
-  .sectionWide {
-    padding: 110px 22px;
-  }
-
-  .sectionTitle {
-    font-size: 36px;
-  }
-
-  .sectionLead {
-    font-size: 19px;
-    margin-bottom: 70px;
-  }
-
-  .card {
-    padding: 38px;
-  }
+  .section, .sectionWide { padding: 110px 22px; }
 }
 
-/* =========================================================
-   RESPONSIVE — MOBILE LARGE (≤ 768px)
-   ========================================================= */
-
+/* MOBILE ≤768px */
 @media (max-width: 768px) {
-  body {
-    line-height: 1.6;
-  }
-
-  .navInner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .navInner { flex-direction: column; align-items: flex-start; }
 
   .navLinks {
     margin-top: 12px;
     display: flex;
-    gap: 14px 18px;
+    gap: 12px 18px;
     flex-wrap: wrap;
   }
 
-  .brand {
-    font-size: 24px;
+  .brand { font-size: 24px; }
+
+  .hero, .heroSmall {
+    padding-top: 120px !important;
+    padding-bottom: 80px !important;
   }
 
-  .navLinks a {
-    margin-left: 0;
-    font-size: 15px;
-  }
+  .heroTitle { font-size: 34px !important; }
+  .heroSubtitle { font-size: 17px; max-width: 95%; }
 
-  .hero,
-  .heroSmall {
-    padding: 115px 22px 80px !important;
-  }
-
-  .heroTitle {
-    font-size: 38px;
-  }
-
-  .heroSubtitle {
-    font-size: 16px;
-    max-width: 95%;
-  }
-
-  .section,
-  .sectionWide {
-    padding: 90px 22px;
-  }
-
-  .sectionTitle {
-    font-size: 30px;
-    margin-bottom: 30px;
-  }
-
-  .sectionLead {
-    font-size: 17px;
-    margin-bottom: 55px;
-    max-width: 95%;
-  }
-
-  .grid {
-    gap: 32px;
-  }
-
-  .card {
-    padding: 32px;
-    border-radius: 20px;
-  }
-
-  .cardTitle {
-    font-size: 20px;
-  }
-
-  .cardText {
-    font-size: 16px;
-  }
+  .sectionLead { font-size: 17px; margin-bottom: 55px; }
 
   .ctaRow {
     flex-direction: column;
-    align-items: center;
     gap: 14px;
   }
 
@@ -444,82 +302,21 @@ body {
     max-width: 260px;
     text-align: center;
   }
-
-  .footer {
-    padding: 40px 22px;
-    margin-top: 90px;
-  }
-
-  .footerInner {
-    font-size: 13px;
-  }
 }
 
-/* =========================================================
-   RESPONSIVE — MOBILE SMALL (≤ 480px)
-   ========================================================= */
-
+/* MOBILE SMALL ≤480px */
 @media (max-width: 480px) {
-  .brand {
-    font-size: 22px;
+  .hero, .heroSmall {
+    padding-top: 110px !important;
+    padding-bottom: 70px !important;
   }
 
-  .hero,
-  .heroSmall {
-    padding: 105px 18px 70px !important;
-  }
+  .heroTitle { font-size: 30px !important; }
+  .heroSubtitle { font-size: 15px; }
 
-  .heroTitle {
-    font-size: 30px;
-  }
+  .section { padding: 80px 18px; }
 
-  .heroSubtitle {
-    font-size: 15px;
-  }
+  .sectionTitle { font-size: 26px; }
 
-  .section,
-  .sectionWide {
-    padding: 80px 18px;
-  }
-
-  .sectionTitle {
-    font-size: 24px;
-  }
-
-  .sectionLead {
-    font-size: 15px;
-    margin-bottom: 45px;
-  }
-
-  .card {
-    padding: 26px;
-    border-radius: 18px;
-  }
-
-  .cardTitle {
-    font-size: 18px;
-  }
-
-  .cardText {
-    font-size: 15px;
-  }
-
-  .ctaRow {
-    gap: 12px;
-  }
-
-  .ctaRow a {
-    max-width: 240px;
-  }
-
-  .footer {
-    padding: 32px 18px;
-    margin-top: 70px;
-  }
-
-  .footerInner {
-    font-size: 12px;
-  }
+  .footer { padding: 32px 18px; }
 }
-
-
