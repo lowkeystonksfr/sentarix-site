@@ -1,359 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>SentariX | Developer Documentation</title>
+<head>
+  <meta charset="UTF-8" />
+  <title>SentariX | Docs</title>
 
-    <meta
-      name="description"
-      content="Developer documentation for the SentariX Prime™ SDK, a sealed temporal stability layer for real time systems."
-    />
+  <!-- DESCRIPTION -->
+  <meta
+    name="description"
+    content="Developer documentation for integrating the SentariX Prime™ SDK into real time systems."
+  />
 
-    <!-- Universal scale lock -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
-               minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
-    />
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Prevent iOS text auto-scaling -->
-    <style>
-      html {
-        -webkit-text-size-adjust: 100% !important;
-      }
-    </style>
+  <!-- UNIVERSAL SCALE LOCK -->
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+             minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
+  />
 
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="/script.js" defer></script>
-  </head>
+  <!-- PREVENT iOS TEXT AUTO-SCALING -->
+  <style>
+    html { -webkit-text-size-adjust: 100% !important; }
+  </style>
 
-  <body>
-    <div class="pageShell">
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/script.js" defer></script>
+</head>
 
-      <!-- HEADER -->
-      <header class="navBar">
-        <div class="navInner">
-          <div class="brand">SentariX</div>
-          <nav class="navLinks">
-            <a href="/">Home</a>
-            <a href="/prime/">Prime</a>
-            <a href="/docs/">Docs</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
-          </nav>
+<body>
+  <div class="pageShell">
+
+    <!-- HEADER -->
+    <header class="navBar">
+      <div class="navInner">
+        <div class="brand">SentariX</div>
+        <nav class="navLinks">
+          <a href="/">Home</a>
+          <a href="/prime/">Prime</a>
+          <a href="/docs/">Docs</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mainContent">
+
+      <!-- HERO -->
+      <section class="heroSmall">
+        <div class="tagLine">Developer Documentation</div>
+        <h1 class="heroTitle">SentariX Prime SDK</h1>
+
+        <p class="heroSubtitle" style="max-width: 820px;">
+          The SentariX Prime SDK gives real time systems a steady timestep they can use as the base for how an experience feels.
+          This page explains how to use the SDK in practice, without exposing how the internal system works.
+        </p>
+
+        <div class="ctaRow" style="margin-top: 38px;">
+          <a class="btnPrimary" href="#python">Python</a>
+          <a class="btnGhost" href="#csharp">C&nbsp;Sharp</a>
+          <a class="btnGhost" href="#integration">Integration overview</a>
         </div>
-      </header>
+      </section>
 
-      <!-- MAIN -->
-      <main class="mainContent">
+      <!-- OVERVIEW -->
+      <section id="overview" class="section">
+        <h2 class="sectionTitle">Overview</h2>
 
-        <!-- HERO -->
-        <section class="heroSmall">
-          <div class="tagLine">Developer Documentation</div>
-          <h1 class="heroTitle">SentariX Prime™ SDK</h1>
+        <p class="sectionLead">
+          SentariX Prime runs as a sealed stability layer.  
+          Your code gives it a single input and receives a steady timestep in return.  
+          You then use that timestep everywhere timing affects how the experience feels.
+        </p>
 
-          <p class="heroSubtitle">
-            The SentariX Prime™ SDK provides a sealed temporal stability layer for real time systems.
-            This page describes the public interface, usage pattern, and integration expectations
-            for teams evaluating Prime under NDA.
-          </p>
-        </section>
-
-        <!-- OVERVIEW -->
-        <section id="overview" class="section">
-          <h2 class="sectionTitle">SDK overview</h2>
-
-          <p class="sectionLead">
-            SentariX Prime™ is delivered as a compiled, sealed SDK that exposes a small, deterministic
-            interface. It introduces a stable perceived timeline that systems can align to, while all
-            internal logic remains fully contained inside the binary.
-          </p>
-
-          <div class="grid">
-            <div class="card">
-              <h3 class="cardTitle">Sealed temporal layer</h3>
-              <p class="cardText">
-                Prime runs as an internal temporal stability layer. Teams use its outputs without
-                managing configuration, parameters, or internal behavior.
-              </p>
-            </div>
-
-            <div class="card">
-              <h3 class="cardTitle">Single input, single output</h3>
-              <p class="cardText">
-                Systems feed a raw timing measurement into Prime and receive a canonical timestep
-                in microseconds. That timestep becomes the reference for time based logic and user
-                perception code.
-              </p>
-            </div>
-
-            <div class="card">
-              <h3 class="cardTitle">No configuration knobs</h3>
-              <p class="cardText">
-                Prime is designed as a fixed, tuned layer. There are no public configuration
-                options for developers to adjust, preventing accidental changes that could weaken
-                stability guarantees.
-              </p>
-            </div>
+        <div class="grid">
+          <div class="card">
+            <h3 class="cardTitle">Simple mental model</h3>
+            <p class="cardText">
+              You feed in timing related readings from your system.  
+              Prime gives you a stable timestep in microseconds that you use across your timing sensitive code.
+            </p>
           </div>
-        </section>
 
-        <!-- PUBLIC API -->
-        <section id="api" class="sectionWide">
-          <h2 class="sectionTitle">Public API</h2>
-
-          <p class="sectionLead" style="max-width: 860px;">
-            The SDK exposes the same conceptual interface across language bindings. A SentariX
-            instance is created, receives timing samples, and returns a timestep that is used for
-            all user perception and time dependent logic.
-          </p>
-
-          <div class="grid">
-            <div class="card">
-              <h3 class="cardTitle">Core operations</h3>
-              <p class="cardText">
-                Every binding of the SentariX Prime™ SDK provides the following core operations:
-              </p>
-              <ul class="cardText" style="margin-top: 12px; padding-left: 20px;">
-                <li><strong>Create</strong> a new <code>SentariX</code> instance</li>
-                <li><strong>Update</strong> with a raw timing sample in microseconds</li>
-                <li><strong>Step</strong> to obtain the canonical timestep in microseconds</li>
-                <li><strong>Reset</strong> to clear internal state while keeping configuration</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3 class="cardTitle">Diagnostics (optional)</h3>
-              <p class="cardText">
-                For evaluation and monitoring, the SDK also exposes safe diagnostics such as the
-                last timing sample and the masked perceived timeline. These are optional to use
-                and do not reveal internal implementation details.
-              </p>
-            </div>
+          <div class="card">
+            <h3 class="cardTitle">One source of perceived time</h3>
+            <p class="cardText">
+              Instead of each system guessing its own timing, they can all read from the same stable source.  
+              This keeps the feel of the experience aligned.
+            </p>
           </div>
-        </section>
 
-        <!-- PYTHON SDK -->
-        <section id="python" class="section">
-          <h2 class="sectionTitle">Python SDK</h2>
+          <div class="card">
+            <h3 class="cardTitle">Sealed and self managed</h3>
+            <p class="cardText">
+              The SDK does not expose internal details or configuration knobs.  
+              You work with a thin public API that stays the same across platforms.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <p class="sectionLead">
-            The Python binding wraps the compiled SentariX core in a thin, sealed interface. It is
-            provided as a wheel for supported Python versions on Windows and Linux.
-          </p>
+      <!-- PYTHON SDK -->
+      <section id="python" class="sectionWide">
+        <h2 class="sectionTitle">Python SDK</h2>
 
-          <div class="grid">
-            <div class="card">
-              <h3 class="cardTitle">Public class</h3>
-              <p class="cardText">
-                The main entry point is a single class:
-              </p>
-<pre style="margin-top:16px; text-align:left; overflow-x:auto;">
-<code>SentariX()
+        <p class="sectionLead" style="max-width: 820px;">
+          The Python SDK is a thin wrapper around the compiled SentariX Prime core.  
+          It is designed to be easy to integrate into engines, tools, and custom pipelines.
+        </p>
 
-Public API:
-    sx.update(rtt_us: int)
-    step = sx.step_us()
-    sx.reset()
+        <div class="grid">
+          <div class="card">
+            <h3 class="cardTitle">Installation</h3>
+            <p class="cardText">
+              You will receive a wheel file as part of your evaluation package.
+            </p>
+<pre><code class="language-bash"># example
+pip install /path/to/sentarix_prime.whl
+</code></pre>
+          </div>
 
-Diagnostics:
-    sx.last_rtt_us
-    sx.perceived_us
-</code>
-</pre>
-            </div>
+          <div class="card">
+            <h3 class="cardTitle">Basic usage</h3>
+            <p class="cardText">
+              Create one SentariX instance per client or session, feed it readings, and use the returned timestep.
+            </p>
+<pre><code class="language-python">from sentarix import SentariX
 
-            <div class="card">
-              <h3 class="cardTitle">Typical usage</h3>
-              <p class="cardText">
-                In a real time loop (for example a game, simulation, or control system), the
-                integration pattern is:
-              </p>
-<pre style="margin-top:16px; text-align:left; overflow-x:auto;">
-<code># Pseudocode; import path depends on your evaluation build
 sx = SentariX()
 
-while running:
-    rtt_us = read_current_timing_sample()   # microseconds
+def on_rtt_sample(rtt_us: int) -> None:
+    # rtt_us in microseconds
     sx.update(rtt_us)
 
-    step_us = sx.step_us()                  # canonical timestep (µs)
+def update_frame() -> None:
+    step_us: int = sx.step_us()
+    # Use step_us for timing sensitive logic:
+    # movement, input feel, interpolation, cooldowns, etc.
 
-    # Use step_us for any logic tied to perceived time:
-    # - movement and input feel
-    # - simulation stepping
-    # - user-facing timing behavior
-    update_system_with(step_us)
-</code>
-</pre>
-              <p class="cardText" style="margin-top:16px;">
-                There are no parameters to tune. The same code path runs for every user and every
-                environment.
-              </p>
-            </div>
+def reset_session() -> None:
+    sx.reset()
+</code></pre>
           </div>
-        </section>
 
-        <!-- C# / ENGINE BINDINGS -->
-        <section id="csharp" class="sectionWide">
-          <h2 class="sectionTitle">C# and engine integration</h2>
+          <div class="card">
+            <h3 class="cardTitle">Python API surface</h3>
+            <p class="cardText">
+<pre><code class="language-python">sx = SentariX()
 
-          <p class="sectionLead" style="max-width: 880px;">
-            For engine and runtime integrations, SentariX Prime™ is also exposed as a sealed C#
-            wrapper around the native binary. This allows engines such as Unity or custom C# stacks
-            to use the same temporal stability layer through a familiar interface.
-          </p>
+sx.update(rtt_us: int)   # feed timing related readings
+step = sx.step_us()      # stable timestep in microseconds
+sx.reset()               # reset between sessions
 
-          <div class="grid">
-            <div class="card">
-              <h3 class="cardTitle">C# wrapper</h3>
-              <p class="cardText">
-                The C# binding mirrors the Python API in structure:
-              </p>
-<pre style="margin-top:16px; text-align:left; overflow-x:auto;">
-<code>var sx = new SentariX();
+sx.last_rtt_us           # safe diagnostic
+sx.perceived_us          # safe diagnostic
+</code></pre>
+            </p>
+          </div>
+        </div>
+      </section>
 
-while (running)
+      <!-- C# SDK -->
+      <section id="csharp" class="sectionWide">
+        <h2 class="sectionTitle">C Sharp SDK</h2>
+
+        <p class="sectionLead" style="max-width: 820px;">
+          A C Sharp wrapper is provided for teams working in engines and runtimes that use C Sharp.
+          It mirrors the same public surface as the Python SDK.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3 class="cardTitle">Basic usage</h3>
+            <p class="cardText">
+              Create a single SentariX instance for each client and reuse it for the lifetime of that session.
+            </p>
+<pre><code class="language-csharp">var sx = new SentariX();
+
+// Called when you receive a timing related reading
+void OnRttSample(long rttUs)
 {
-    ulong rttUs = ReadCurrentTimingSample();
     sx.Update(rttUs);
-
-    long stepUs = sx.StepUs;
-    ApplyStepToPerception(stepUs);
 }
 
-// Optional:
-sx.Reset();
-</code>
-</pre>
-              <p class="cardText" style="margin-top:16px;">
-                Diagnostics such as <code>LastRttUs</code> and <code>PerceivedUs</code> are also
-                available for monitoring and analysis during evaluation. :contentReference[oaicite:0]{index=0}
-              </p>
-            </div>
+// Called once per frame or tick
+void UpdateFrame()
+{
+    long stepUs = sx.StepUs();
+    // Use stepUs across movement, feel, and other timing logic
+}
 
-            <div class="card">
-              <h3 class="cardTitle">Binary delivery</h3>
-              <p class="cardText">
-                Engine integrations receive a compiled native library and a managed wrapper. The
-                binary remains sealed; only the public methods and properties described here are
-                intended to be used.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- USAGE PATTERN -->
-        <section id="usage" class="section">
-          <h2 class="sectionTitle">Integration pattern</h2>
-
-          <p class="sectionLead">
-            Prime is designed to fit into existing real time pipelines without structural changes.
-            The integration pattern is consistent across languages and environments.
-          </p>
-
-          <div class="grid">
-            <div class="card">
-              <h3 class="cardTitle">1. Create a SentariX instance</h3>
-              <p class="cardText">
-                Construct a single <code>SentariX</code> instance for the relevant loop or context.
-                No configuration or tuning is required.
-              </p>
-            </div>
-
-            <div class="card">
-              <h3 class="cardTitle">2. Feed timing samples</h3>
-              <p class="cardText">
-                On each tick or frame where timing is updated, call <code>update(rtt_us)</code>
-                or the equivalent binding method, passing a timing measurement in microseconds.
-              </p>
-            </div>
-
-            <div class="card">
-              <h3 class="cardTitle">3. Use the canonical timestep</h3>
-              <p class="cardText">
-                On each loop iteration, read the canonical timestep via <code>step_us()</code>
-                or the equivalent property. Use this value for all logic tied to perceived time,
-                ensuring a consistent feel across conditions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- VERSIONING + ASSURANCE -->
-        <section id="assurance" class="sectionWide">
-          <h2 class="sectionTitle">Versioning and developer assurance</h2>
-
-          <p class="sectionLead" style="max-width: 880px;">
-            SentariX Prime™ is versioned and delivered as a sealed SDK intended for long term
-            stability. Evaluation builds are provided under NDA and follow a clear, predictable
-            update model.
-          </p>
-
-          <div class="grid">
-            <div class="card">
-              <h3 class="cardTitle">Versioning</h3>
-              <p class="cardText">
-                The SDK is released with explicit version identifiers. Interfaces are kept stable,
-                with changes communicated through release notes and evaluation updates.
-              </p>
-              <p class="cardText" style="margin-top: 10px;">
-                <strong>Current evaluation version:</strong> 1.0.0
-              </p>
-            </div>
-
-            <div class="card">
-              <h3 class="cardTitle">Developer assurance</h3>
-              <p class="cardText">
-                Teams integrating Prime can expect:
-              </p>
-              <ul class="cardText" style="margin-top: 12px; padding-left: 20px;">
-                <li>A small, deterministic public interface</li>
-                <li>No breaking changes to the core API within a given major version</li>
-                <li>Sealed binaries with no requirement to manage internals</li>
-                <li>Clear guidance for integration into real time loops</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3 class="cardTitle">Operation model</h3>
-              <p class="cardText">
-                Prime operates locally within your system. It does not transmit or store external
-                data, and all computation remains under your infrastructure’s control.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- EVALUATION ACCESS -->
-        <section id="evaluation" class="section">
-          <h2 class="sectionTitle">Evaluation and support</h2>
-
-          <p class="sectionLead">
-            Access to the SentariX Prime™ SDK is provided on a selective basis under NDA. Teams
-            interested in evaluation, engine integration, or production use can reach out directly.
-          </p>
-
-          <div class="ctaRow" style="margin-top: 24px;">
-            <a class="btnPrimary" href="/contact/">Contact SentariX</a>
+// When starting a new session or match
+void ResetSession()
+{
+    sx.Reset();
+}
+</code></pre>
           </div>
 
-          <p class="sectionLead" style="margin-top: 40px; max-width: 720px;">
-            For developer specific inquiries, include a brief overview of your system, target
-            environment, and how you are considering Prime. This helps align evaluation and
-            integration discussions from the start.
-          </p>
-        </section>
+          <div class="card">
+            <h3 class="cardTitle">C Sharp API surface</h3>
+            <p class="cardText">
+<pre><code class="language-csharp">var sx = new SentariX();
 
-      </main>
+sx.Update(long rttUs);   // feed readings in microseconds
+long stepUs = sx.StepUs();  // stable timestep
+sx.Reset();                 // reset between sessions
+</code></pre>
+            </p>
+          </div>
 
-      <!-- FOOTER -->
-      <footer class="footer">
-        <div class="footerInner">
-          © <span id="year"></span> 2025 SentariX Inc. The Standard of Consistency™
+          <div class="card">
+            <h3 class="cardTitle">Native library binding</h3>
+            <p class="cardText">
+              The wrapper is already wired to the native library in your evaluation package.
+              You only need to keep the shared library file and the wrapper in the same expected layout.
+            </p>
+          </div>
         </div>
-      </footer>
+      </section>
 
-    </div>
-  </body>
+      <!-- INTEGRATION GUIDELINES -->
+      <section id="integration" class="section">
+        <h2 class="sectionTitle">Integration guidelines</h2>
+
+        <p class="sectionLead">
+          Prime works best when it is treated as the single source of perceived timing.  
+          The patterns below help keep your integration clean and predictable.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3 class="cardTitle">One instance per client</h3>
+            <p class="cardText">
+              Create a single SentariX object for each user or client session and reuse it.
+              Do not create new instances each frame.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Feed fresh readings</h3>
+            <p class="cardText">
+              Call <code>update</code> whenever you receive a new timing related reading in microseconds.
+              Packet loss or missing data can be represented as zero when needed.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Use the step everywhere feel matters</h3>
+            <p class="cardText">
+              Call <code>step_us</code> or <code>StepUs</code> once per frame or tick and use it for:
+              movement, camera feel, recoil, cooldowns, animation pacing, interpolation, and related systems.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Do not reshape the output</h3>
+            <p class="cardText">
+              Use the returned timestep as is.  
+              Do not smooth, rescale, or mix it with other timing sources, or the stability benefits will be reduced.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Reset only on session boundaries</h3>
+            <p class="cardText">
+              Call <code>reset</code> when starting a new session, match, or major context change.  
+              Do not reset during normal play.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Keep timing code aligned</h3>
+            <p class="cardText">
+              For best results, use the Prime timestep across all systems that shape user perception.
+              Mixing different timing sources will reintroduce uneven feel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLATFORMS / EVALUATION -->
+      <section id="platforms" class="sectionWide">
+        <h2 class="sectionTitle">Evaluation build and platforms</h2>
+
+        <p class="sectionLead" style="max-width: 840px;">
+          SentariX Prime is provided as a sealed evaluation build.  
+          The package is designed to drop into existing environments with minimal setup.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3 class="cardTitle">What is included</h3>
+            <p class="cardText">
+              Your evaluation package includes:
+              <br><br>
+              • a compiled native library for supported platforms<br>
+              • a Python wheel for direct use in Python environments<br>
+              • a C Sharp wrapper bound to the native library
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Scope of use</h3>
+            <p class="cardText">
+              Evaluation builds are intended for internal testing and technical review.  
+              A commercial license is required for full production use, shipping, or distribution.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Support and questions</h3>
+            <p class="cardText">
+              For questions about supported platforms, engine specific notes, or deeper integration guidance,
+              reach out through the contact page using your evaluation reference.
+            </p>
+          </div>
+        </div>
+
+        <div class="ctaRow" style="margin-top: 32px;">
+          <a class="btnPrimary" href="/contact/">Discuss integration or evaluation</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footerInner">
+        © <span id="year"></span> SentariX Inc. The Standard of Consistency™
+      </div>
+    </footer>
+
+  </div>
+</body>
 </html>
