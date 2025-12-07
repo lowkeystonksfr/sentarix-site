@@ -20,6 +20,28 @@
 
   <style>
     html { -webkit-text-size-adjust: 100% !important; }
+
+    /* Chart styling */
+    .prime-chart-wrapper {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .prime-chart-wrapper img {
+      width: 100%;
+      max-width: 1400px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 0 28px rgba(0,0,0,0.35);
+    }
+
+    .prime-chart-caption {
+      margin-top: 22px;
+      font-size: 17px;
+      color: #cfcfcf;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
   </style>
 
   <link rel="stylesheet" href="/styles.css" />
@@ -231,31 +253,21 @@
         </div>
       </section>
 
-      <!-- DEMO -->
+      <!-- NEW DEMO / CHART -->
       <section id="demo" class="section">
-        <h2 class="sectionTitle">Demo preview</h2>
+        <h2 class="sectionTitle">Demonstration</h2>
 
         <p class="sectionLead">
-          A simple visual comparing uneven timing in typical systems with the steady intervals produced by Prime.
+          A high-level view of how unstable environments differ from the steady cadence Prime holds beneath real time systems.
         </p>
 
-        <div class="prime-demo" style="margin-bottom:32px;">
-          <h3 class="cardTitle" style="margin-bottom:12px;">Interval consistency</h3>
-
-          <div class="prime-demo-controls">
-            <button id="prime-demo-start">Start demo</button>
-            <button id="prime-demo-stop">Stop</button>
-          </div>
-
-          <canvas id="prime-demo-canvas" width="900" height="260"></canvas>
-
-          <p class="prime-demo-caption">
-            <span class="prime-demo-label raw">RAW</span> uneven timing<br>
-            <span class="prime-demo-label sx">SentariX Prime™</span> steady timing
+        <div class="prime-chart-wrapper">
+          <img src="/chart1.png" alt="SentariX Prime timing visualization">
+          <p class="prime-chart-caption">
+            This visualization reflects the contrast teams can expect:  
+            an unsteady environment above, and the consistent timing foundation Prime maintains underneath.
           </p>
         </div>
-
-        <script src="/prime-demo.js"></script>
       </section>
 
     </main>
@@ -269,3 +281,4 @@
   </div>
 </body>
 </html>
+
