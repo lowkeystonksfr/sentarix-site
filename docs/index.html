@@ -5,7 +5,7 @@
   <title>SentariX Prime Documentation</title>
 
   <meta name="description"
-        content="Documentation for SentariX Prime. A high level overview of what teams can expect when evaluating the system.">
+        content="Documentation for teams evaluating SentariX Prime. Overview of supported platforms, package contents, and what to expect during integration.">
 
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
@@ -36,126 +36,140 @@
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="heroSmall">
       <div class="tagLine">Documentation</div>
-      <h1 class="heroTitle">Understanding SentariX Prime</h1>
+      <h1 class="heroTitle">Evaluation Package Overview</h1>
 
       <p class="heroSubtitle" style="max-width:820px;">
-        This page gives a clear overview of what SentariX Prime provides and what development teams can expect when they receive access to the evaluation package.
+        This page explains what development teams receive when testing SentariX Prime and how the evaluation package is structured.
       </p>
     </section>
 
     <main class="mainContent">
 
-      <!-- WHAT PRIME IS -->
+      <!-- WHAT IS INCLUDED -->
       <section class="section">
-        <h2 class="sectionTitle">What Prime is</h2>
+        <h2 class="sectionTitle">What the package includes</h2>
 
         <p class="sectionLead">
-          SentariX Prime gives real time systems a steady sense of timing that stays the same for every user.  
-          This removes the small shifts that normally change how a system feels from moment to moment.  
-          Prime strengthens clarity, fairness, and confidence across all forms of interaction.
+          Approved teams receive a complete set of build files and supporting materials needed to explore SentariX Prime in a real environment.
         </p>
 
         <div class="grid">
+
           <div class="card">
-            <h3 class="cardTitle">A steady experience</h3>
+            <h3 class="cardTitle">Platform libraries</h3>
             <p class="cardText">
-              Prime keeps the feel of an experience from drifting. Movements reactions and controls stay natural and dependable across conditions.
+              Prebuilt library files for supported platforms  
+              Windows includes a DLL  
+              Linux includes a SO  
+              macOS support is available upon request
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Simple for teams</h3>
+            <h3 class="cardTitle">Python wheels</h3>
             <p class="cardText">
-              Prime works on its own and produces results that fit easily into existing systems.  
-              No internal design or hidden behavior is ever exposed.
+              Ready to use Python wheels for common versions  
+              Each wheel contains the native extension required for evaluation
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Consistent for everyone</h3>
+            <h3 class="cardTitle">C Sharp binding</h3>
             <p class="cardText">
-              All users share the same steady environment which raises trust and brings clarity to the entire experience.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- EVALUATION PACKAGE -->
-      <section class="sectionWide">
-        <h2 class="sectionTitle">What the evaluation package includes</h2>
-
-        <p class="sectionLead" style="max-width:820px;">
-          Approved teams receive a sealed build that allows full hands on testing while keeping the inner design protected.
-          The package contains everything needed to explore Prime in a real environment.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3 class="cardTitle">Compiled library files</h3>
-            <p class="cardText">
-              Prebuilt libraries for supported platforms.  
-              All internal logic stays sealed.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Language bindings</h3>
-            <p class="cardText">
-              Ready to use bindings for Python and C Sharp so teams can test Prime in their current environment.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Integration guide</h3>
-            <p class="cardText">
-              A private PDF explains how to connect Prime during evaluation.  
-              Only high level information is shared.
+              A lightweight C Sharp file that connects to the native library and exposes the public interface
             </p>
           </div>
 
           <div class="card">
             <h3 class="cardTitle">Example projects</h3>
             <p class="cardText">
-              Small examples that show how Prime fits into a workflow without revealing any internal behavior.
+              Small examples for Python and C Sharp that show how to call the public interface during evaluation
             </p>
           </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Integration guide</h3>
+            <p class="cardText">
+              A private PDF that explains how to connect Prime to a real session and how to read the public output
+            </p>
+          </div>
+
         </div>
       </section>
 
-      <!-- HOW PRIME FITS -->
-      <section class="section">
-        <h2 class="sectionTitle">How Prime fits into a system</h2>
+      <!-- SUPPORTED LANGUAGES -->
+      <section class="sectionWide">
+        <h2 class="sectionTitle">Supported languages</h2>
 
-        <p class="sectionLead">
-          Prime is built to integrate quickly.  
-          Teams connect through a single entry point and use the result wherever steady timing is needed.  
-          Prime does the work on its own and never exposes sensitive logic.
+        <p class="sectionLead" style="max-width:780px;">
+          SentariX Prime works in any environment that can call a native library.  
+          Official bindings are provided for the following languages.
         </p>
 
         <div class="grid">
+
           <div class="card">
-            <h3 class="cardTitle">Fast to adopt</h3>
+            <h3 class="cardTitle">Python</h3>
             <p class="cardText">
-              Prime fits naturally into current code with no need for structural changes or redesign.
+              Distributed as wheels that include the required extension  
+              Works on Windows and Linux with common versions
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Private behavior</h3>
+            <h3 class="cardTitle">C Sharp</h3>
             <p class="cardText">
-              Only the output is visible.  
-              Everything inside Prime remains sealed and inaccessible.
+              Provided through a thin wrapper that calls the native library  
+              Can be used in engines and custom applications
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Built for real use</h3>
+            <h3 class="cardTitle">Other languages</h3>
             <p class="cardText">
-              The evaluation build is designed to run inside actual products so teams can measure progress with real data.
+              Any environment that supports native calls can integrate Prime  
+              Additional bindings can be arranged during evaluation
             </p>
           </div>
+
+        </div>
+      </section>
+
+      <!-- HOW TEAMS USE IT -->
+      <section class="section">
+        <h2 class="sectionTitle">What teams can expect</h2>
+
+        <p class="sectionLead">
+          The evaluation build is designed to drop into existing systems with minimal effort.  
+          Teams typically test Prime inside movement logic, input feel, interpolation, simulation steps, or other timing sensitive areas.
+        </p>
+
+        <div class="grid">
+
+          <div class="card">
+            <h3 class="cardTitle">Fast setup</h3>
+            <p class="cardText">
+              Each package includes clear examples that can be adapted in minutes
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Works in real environments</h3>
+            <p class="cardText">
+              The build is made for hands on evaluation inside actual products or prototypes
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Simple interface</h3>
+            <p class="cardText">
+              Prime returns one public value that teams use wherever consistent feel is required
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -164,12 +178,12 @@
         <h2 class="sectionTitle">Next steps</h2>
 
         <p class="sectionLead" style="max-width:820px;">
-          Evaluation access is provided under confidentiality.  
-          Once approved, your team will receive the full sealed package and the private integration guide.
+          Access to the evaluation package is provided upon request.  
+          Teams receive the full set of files and the private integration guide once approved.
         </p>
 
         <div class="ctaRow">
-          <a class="btnPrimary" href="/contact/">Request evaluation access</a>
+          <a class="btnPrimary" href="/contact/">Request access</a>
         </div>
       </section>
 
@@ -183,5 +197,8 @@
     </footer>
 
   </div>
+</body>
+</html>
+
 </body>
 </html>
