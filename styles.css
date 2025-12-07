@@ -29,6 +29,13 @@ body {
   z-index: 50;
 }
 
+.brandLogo {
+  height: 32px; /* adjust if needed */
+  width: auto;
+  display: block;
+}
+
+
 .navInner {
   display: flex;
   justify-content: space-between;
