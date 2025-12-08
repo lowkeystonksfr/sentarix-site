@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- FAVICONS (cache-breaking and unified across all pages) -->
   <link rel="icon" href="/favicon.ico?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
   <link rel="manifest" href="/site.webmanifest?v=2">
@@ -19,19 +18,25 @@
   />
 
   <style>
-    html { -webkit-text-size-adjust: 100 percent !important; }
+    html { -webkit-text-size-adjust: 100% !important; }
 
     .prime-chart-wrapper {
       text-align: center;
       margin-top: 40px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .prime-chart-wrapper img {
-      width: 100 percent;
+      width: 100%;
+      height: auto;
       max-width: 1400px;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.06);
       box-shadow: 0 0 28px rgba(0,0,0,0.35);
+      object-fit: contain;
     }
 
     .prime-chart-caption {
@@ -40,6 +45,8 @@
       color: #cfcfcf;
       opacity: 0.85;
       line-height: 1.6;
+      max-width: 900px;
+      text-align: center;
     }
   </style>
 
@@ -85,7 +92,7 @@
         <h2 class="sectionTitle">Overview</h2>
 
         <p class="sectionLead">
-          Prime gives systems a dependable sense of timing that does not drift, fluctuate, or break under changing conditions.  
+          Prime gives systems a dependable sense of timing that does not drift or break under changing conditions.  
           With a steady timing layer underneath, actions feel accurate, reactions stay consistent, and the experience becomes easier to trust.
         </p>
 
@@ -107,7 +114,7 @@
           <div class="card">
             <h3 class="cardTitle">Sealed and self contained</h3>
             <p class="cardText">
-              Prime handles everything internally. Teams only use the output and never need to manage configuration.
+              Prime handles everything internally. Teams use the output without needing to manage configuration.
             </p>
           </div>
         </div>
@@ -117,9 +124,9 @@
         <h2 class="sectionTitle">Why timing consistency matters</h2>
 
         <p class="sectionLead" style="max-width:900px;">
-          Without steady timing, a system slowly becomes harder to use.  
-          Movements lose accuracy, actions feel delayed, and two users no longer share the same experience.  
-          This leads to a loss of trust, a loss of clarity, and widening gaps between players or participants.
+          Without steady timing, a system becomes harder to use.  
+          Movements lose accuracy, actions feel delayed, and no two users share the same experience.  
+          This leads to a loss of trust, a loss of clarity, and widening gaps across environments.
         </p>
 
         <div class="grid">
@@ -196,7 +203,7 @@
           <div class="card">
             <h3 class="cardTitle">No configuration needed</h3>
             <p class="cardText">
-              Prime requires no tuning or configuration. The stability is built in.
+              Prime requires no tuning or setup. The stability is built in.
             </p>
           </div>
 
@@ -226,7 +233,7 @@
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Real world environment results</h3>
+            <h3 class="cardTitle">Real environment results</h3>
             <p class="cardText">
               See how your system behaves with steady timing applied in practice.
             </p>
@@ -249,14 +256,14 @@
         <h2 class="sectionTitle">Demonstration</h2>
 
         <p class="sectionLead">
-          A high level view of how unstable environments differ from the steady cadence Prime enables.
+          A high level view of how unstable environments differ from the steady cadence enabled by Prime.
         </p>
 
         <div class="prime-chart-wrapper">
           <img src="/chart1.png" alt="SentariX Prime timing visualization">
           <p class="prime-chart-caption">
             This visualization reflects the real contrast teams can expect,  
-            an unsteady environment above, and the consistent timing foundation produced by Prime.
+            an unsteady environment above and the consistent timing foundation produced by Prime.
           </p>
         </div>
       </section>
@@ -272,9 +279,3 @@
   </div>
 </body>
 </html>
-
-
-  </div>
-</body>
-</html>
-
