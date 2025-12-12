@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="SentariX Prime™ defines the local time reference used by real time systems."
+    content="SentariX Prime™ defines a stable local time reference for real time systems."
   />
 
   <meta
@@ -20,7 +20,6 @@
 
   <style>
     html { -webkit-text-size-adjust: 100% !important; }
-
     .prime-chart-wrapper {
       text-align: center;
       margin-top: 40px;
@@ -29,21 +28,22 @@
       flex-direction: column;
       align-items: center;
     }
-
     .prime-chart-wrapper img {
       width: 100%;
+      height: auto;
       max-width: 1400px;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.06);
       box-shadow: 0 0 28px rgba(0,0,0,0.35);
+      object-fit: contain;
     }
-
     .prime-chart-caption {
-      margin-top: 20px;
-      font-size: 16px;
+      margin-top: 22px;
+      font-size: 17px;
       color: #cfcfcf;
-      max-width: 900px;
+      opacity: 0.85;
       line-height: 1.6;
+      max-width: 900px;
       text-align: center;
     }
   </style>
@@ -53,174 +53,200 @@
 </head>
 
 <body>
-  <div class="pageShell">
+<div class="pageShell">
 
-    <header class="navBar">
-      <div class="navInner">
-        <div class="brand">
-          <img src="/assets/sentarix-logo.png" alt="SentariX" class="brandLogo">
-        </div>
-        <nav class="navLinks">
-          <a href="/">Home</a>
-          <a href="/prime/">Prime</a>
-          <a href="/docs/">Docs</a>
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="heroSmall">
-      <div class="tagLine">SentariX Prime™</div>
-      <h1 class="heroTitle">The Time Authority</h1>
-
-      <p class="heroSubtitle" style="max-width:760px;">
-        Users experience inconsistent feel when systems do not share the same sense of time.
-      </p>
-
-      <p class="heroSubtitle" style="max-width:760px; margin-top:22px;">
-        Prime defines the local time reference systems use.
-      </p>
-    </section>
-
-    <main class="mainContent">
-
-      <!-- DEFINITION -->
-      <section class="section">
-        <h2 class="sectionTitle">Definition</h2>
-
-        <p class="sectionLead">
-          Prime is a sealed timing layer.
-          All system behavior references its output.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3 class="cardTitle">Single reference</h3>
-            <p class="cardText">
-              One local time governs the system.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Sealed operation</h3>
-            <p class="cardText">
-              Internal behavior is not exposed.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Deterministic output</h3>
-            <p class="cardText">
-              Time is consumed as a defined value.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- SCOPE -->
-      <section class="sectionWide">
-        <h2 class="sectionTitle">Scope</h2>
-
-        <p class="sectionLead">
-          Prime applies wherever consistent timing is required.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3 class="cardTitle">Core execution</h3>
-            <p class="cardText">
-              Logic advances using Prime time.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Interaction layers</h3>
-            <p class="cardText">
-              Timing sensitive behavior shares the same reference.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Distributed use</h3>
-            <p class="cardText">
-              Local consistency is preserved across environments.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- DEMO -->
-      <section class="section">
-        <h2 class="sectionTitle">Demonstration</h2>
-
-        <p class="sectionLead">
-          A direct view of system behavior under a defined time reference.
-        </p>
-
-        <div class="prime-chart-wrapper">
-          <img src="/chart1.png" alt="SentariX Prime demonstration">
-          <p class="prime-chart-caption">
-            This visualization reflects system behavior driven by Prime time under real operating conditions.
-          </p>
-        </div>
-      </section>
-
-      <!-- INTEGRATION -->
-      <section class="sectionWide">
-        <h2 class="sectionTitle">Integration</h2>
-
-        <p class="sectionLead">
-          Prime exposes a single output.
-          No configuration is required.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3 class="cardTitle">Minimal interface</h3>
-            <p class="cardText">
-              One value. One reference.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Drop in use</h3>
-            <p class="cardText">
-              Existing systems remain intact.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="cardTitle">Independent layer</h3>
-            <p class="cardText">
-              Prime governs itself.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- EVALUATION -->
-      <section class="sectionWide">
-        <h2 class="sectionTitle">Evaluation access</h2>
-
-        <p class="sectionLead">
-          Evaluation access is provided through a sealed build under confidentiality.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btnPrimary" href="/contact/">Request evaluation access</a>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="footer">
-      <div class="footerInner">
-        © <span id="year"></span> SentariX Inc. The Standard of Digital Consistency™
-      </div>
-    </footer>
-
+<header class="navBar">
+  <div class="navInner">
+    <div class="brand">
+      <img src="/assets/sentarix-logo.png" alt="SentariX" class="brandLogo">
+    </div>
+    <nav class="navLinks">
+      <a href="/">Home</a>
+      <a href="/prime/">Prime</a>
+      <a href="/docs/">Docs</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
   </div>
+</header>
+
+<section class="heroSmall" style="padding-bottom:40px;">
+  <div class="tagLine">SentariX Prime™</div>
+  <h1 class="heroTitle">A Stable Time Reference for Real Time Systems</h1>
+
+  <p class="heroSubtitle" style="max-width:820px;">
+    Users experience inconsistent feel when systems do not operate against a shared sense of time.
+  </p>
+
+  <p class="heroSubtitle" style="max-width:820px; margin-top:26px;">
+    SentariX Prime™ defines the local time reference used by the system.
+  </p>
+</section>
+
+<main class="mainContent">
+
+<section class="section">
+  <h2 class="sectionTitle">Overview</h2>
+
+  <p class="sectionLead">
+    Prime provides a stable time reference that systems rely on during execution.
+    Behavior becomes easier to reason about and maintain.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 class="cardTitle">Defined reference</h3>
+      <p class="cardText">
+        System behavior is driven by a single local time source.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Unified behavior</h3>
+      <p class="cardText">
+        All timing dependent logic follows the same reference.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Sealed layer</h3>
+      <p class="cardText">
+        Prime operates internally and exposes only its output.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sectionWide">
+  <h2 class="sectionTitle">Why consistency matters</h2>
+
+  <p class="sectionLead" style="max-width:900px;">
+    Inconsistent timing leads to variation in behavior across users and environments.
+    This variation becomes visible during interaction.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 class="cardTitle">Temporal variation</h3>
+      <p class="cardText">
+        Behavior changes over time without intent.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Unclear response</h3>
+      <p class="cardText">
+        Identical actions can feel different.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Divergent environments</h3>
+      <p class="cardText">
+        Systems behave differently under similar logic.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="sectionTitle">What Prime provides</h2>
+
+  <p class="sectionLead">
+    Prime establishes a stable foundation for timing dependent systems.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 class="cardTitle">Shared reference</h3>
+      <p class="cardText">
+        All users operate against the same local time.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Consistent behavior</h3>
+      <p class="cardText">
+        System output remains coherent under varying conditions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Improved confidence</h3>
+      <p class="cardText">
+        Interaction becomes predictable and reliable.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sectionWide">
+  <h2 class="sectionTitle">Integration</h2>
+
+  <p class="sectionLead" style="max-width:780px;">
+    Prime exposes a single time output for system use.
+    No configuration is required.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 class="cardTitle">Minimal interface</h3>
+      <p class="cardText">
+        One reference point.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Drop in usage</h3>
+      <p class="cardText">
+        Existing systems remain unchanged.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="cardTitle">Independent operation</h3>
+      <p class="cardText">
+        Internal behavior remains sealed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sectionWide">
+  <h2 class="sectionTitle">Evaluation access</h2>
+
+  <p class="sectionLead" style="max-width:820px;">
+    Evaluation access is provided through a sealed build under confidentiality.
+  </p>
+
+  <div class="ctaRow">
+    <a class="btnPrimary" href="/contact/">Request evaluation access</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="sectionTitle">Demonstration</h2>
+
+  <p class="sectionLead">
+    A visual reference of system behavior under a stable time source.
+  </p>
+
+  <div class="prime-chart-wrapper">
+    <img src="/chart1.png" alt="SentariX Prime timing visualization">
+    <p class="prime-chart-caption">
+      The visualization reflects system behavior operating against the Prime time reference.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footerInner">
+    © <span id="year"></span> SentariX Inc. The Standard of Digital Consistency™
+  </div>
+</footer>
+
+</div>
 </body>
 </html>
