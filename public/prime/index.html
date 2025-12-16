@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="SentariX Prime™ provides a steady timing environment for real time systems, enabling consistent behavior and reliable interaction."
+    content="SentariX Prime™ provides a steady timing layer for real time systems, producing a stable tick and a monotonic intent timeline for consistent execution."
   >
 
   <meta
@@ -88,15 +88,13 @@
         A Steady Timing Layer for Real Time Systems
       </h1>
 
-      <p class="heroSubtitle" style="max-width:820px;">
-        Real time systems change continuously.
-        SentariX Prime™ provides a timing layer that remains steady
-        as conditions vary.
+      <p class="heroSubtitle" style="max-width:860px;">
+        Prime provides a stable simulation tick and a monotonic intent timeline that remain steady as conditions vary.
+        It is designed to be embedded into existing real time execution loops through a minimal interface.
       </p>
 
-      <p class="heroSubtitle" style="max-width:820px; margin-top:26px;">
-        With a stable timing reference, systems behave predictably
-        and interactions become easier to trust.
+      <p class="heroSubtitle" style="max-width:860px; margin-top:26px;">
+        Prime is self-contained and exposes only stable outputs required for consistent execution and reliable event interpretation.
       </p>
     </section>
 
@@ -105,34 +103,34 @@
       <section id="overview" class="section">
         <h2 class="sectionTitle">Overview</h2>
 
-        <p class="sectionLead">
+        <p class="sectionLead" style="max-width:920px;">
           Prime provides a dependable timing foundation for real time systems.
-          When timing remains stable, behavior becomes consistent,
-          control improves, and outcomes are easier to reason about.
+          It supplies a steady tick for simulation and a monotonic microsecond timeline for intent and event stamping.
+          This enables consistent execution, predictable processing, and simpler reasoning in timing-sensitive flows.
         </p>
 
         <div class="grid">
           <div class="card">
-            <h3 class="cardTitle">A stable foundation</h3>
+            <h3 class="cardTitle">Steady simulation tick</h3>
             <p class="cardText">
-              Systems rely on timing.
-              A steady timing layer reduces variability across execution.
+              Produces a stable step output suitable for fixed-tick simulation loops.
+              Designed to keep simulation cadence consistent across execution environments.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Clearer interaction</h3>
+            <h3 class="cardTitle">Monotonic intent timeline</h3>
             <p class="cardText">
-              Actions and feedback remain aligned,
-              even as environments change.
+              Provides a monotonic microsecond timeline for intent timestamping and event ordering.
+              Useful for client-side ordering and deterministic interpretation of actions.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Self-contained operation</h3>
+            <h3 class="cardTitle">Sealed operation</h3>
             <p class="cardText">
-              Prime operates internally and exposes only
-              a minimal, stable interface.
+              Runs internally and exposes only a minimal stable interface.
+              Intended for evaluation and integration without revealing internal design.
             </p>
           </div>
         </div>
@@ -141,10 +139,9 @@
       <section id="products" class="sectionWide">
         <h2 class="sectionTitle">Capabilities enabled by Prime</h2>
 
-        <p class="sectionLead" style="max-width:900px;">
-          Prime serves as the timing foundation.
-          On top of it, SentariX delivers focused capabilities
-          that address timing-sensitive requirements in production systems.
+        <p class="sectionLead" style="max-width:920px;">
+          Prime is the timing foundation.
+          It enables focused capabilities for systems that require stable simulation cadence and reliable intent/event interpretation.
         </p>
 
         <div class="grid">
@@ -153,52 +150,39 @@
             <h3 class="cardTitle">Prime Core</h3>
             <p class="cardText">
               A steady timing reference designed for real time execution.
-              Prime Core provides the baseline required for consistent behavior.
+              Provides stable step output and an internal timing foundation for integration.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Intent Timestamping</h3>
+            <h3 class="cardTitle">Intent timestamping</h3>
             <p class="cardText">
-              Actions are recorded based on when they occur
-              within a stable timeline.
-            </p>
-            <p class="cardText">
-              This supports accurate ordering and clearer interpretation
-              of user input and system events.
+              Records actions against a monotonic microsecond timeline.
+              Supports ordering and consistent interpretation of user input and system events.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Deterministic Mechanics</h3>
+            <h3 class="cardTitle">Deterministic mechanics</h3>
             <p class="cardText">
-              Mechanical behavior remains consistent
-              across frame rates and execution environments.
-            </p>
-            <p class="cardText">
-              Identical inputs result in predictable outcomes.
+              Enables fixed-tick execution where identical discrete inputs are evaluated against a stable cadence.
+              Intended for mechanics and logic that benefit from predictable stepping and consistent tuning.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Predictable Event Ordering</h3>
+            <h3 class="cardTitle">Predictable event ordering</h3>
             <p class="cardText">
-              Events resolve against a stable reference,
-              reducing ambiguity during processing.
-            </p>
-            <p class="cardText">
-              This simplifies validation and downstream logic.
+              Resolves events against a stable reference timeline.
+              Reduces ambiguity in downstream processing pipelines.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Consistency for Interaction-Critical Systems</h3>
+            <h3 class="cardTitle">Consistency for interaction-critical systems</h3>
             <p class="cardText">
-              Systems that depend on precise timing
-              benefit from a reference that does not drift.
-            </p>
-            <p class="cardText">
-              The result is stronger control and higher confidence during use.
+              Supports systems that require stable cadence and reliable interpretation under varying conditions.
+              Designed for real time loops where timing stability matters.
             </p>
           </div>
 
@@ -208,33 +192,34 @@
       <section id="integration" class="sectionWide">
         <h2 class="sectionTitle">Integration</h2>
 
-        <p class="sectionLead" style="max-width:780px;">
-          Prime integrates through a single input and returns
-          a steady timing output.
-          It operates alongside existing systems
-          without requiring architectural changes.
+        <p class="sectionLead" style="max-width:860px;">
+          Prime integrates through a minimal call surface.
+          It accepts a single input and returns stable timing outputs suitable for simulation stepping and intent/event stamping.
+          It is designed to operate alongside existing systems without requiring architectural restructuring.
         </p>
 
         <div class="grid">
           <div class="card">
             <h3 class="cardTitle">Minimal interface</h3>
             <p class="cardText">
-              Designed to fit directly into current workflows.
+              Designed to fit directly into existing update loops.
+              Typical usage is one call per simulation tick.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">No configuration</h3>
+            <h3 class="cardTitle">Operationally simple</h3>
             <p class="cardText">
-              Prime does not require tuning or calibration.
+              No exposed tuning surface.
+              Intended for consistent behavior with a predictable integration contract.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Independent operation</h3>
+            <h3 class="cardTitle">Self-contained</h3>
             <p class="cardText">
-              Prime manages timing internally
-              and exposes only stable outputs.
+              Prime manages internal state and exposes only stable outputs.
+              Suitable for evaluation under confidentiality.
             </p>
           </div>
         </div>
@@ -243,32 +228,32 @@
       <section id="evaluation" class="sectionWide">
         <h2 class="sectionTitle">Evaluation access</h2>
 
-        <p class="sectionLead" style="max-width:820px;">
-          A sealed evaluation build is available to selected teams
-          under confidentiality.
-          This allows direct assessment in real environments.
+        <p class="sectionLead" style="max-width:860px;">
+          A sealed evaluation build is available to selected teams under confidentiality.
+          The package includes compiled binaries and reference wrappers for integration testing in controlled environments.
         </p>
 
         <div class="grid">
           <div class="card">
             <h3 class="cardTitle">Protected package</h3>
             <p class="cardText">
-              Delivered as a compiled build
-              with no internal design exposed.
+              Delivered as compiled artifacts with a minimal public surface.
+              Intended for assessment without internal design exposure.
             </p>
           </div>
 
           <div class="card">
-            <h3 class="cardTitle">Practical results</h3>
+            <h3 class="cardTitle">Verification workflow</h3>
             <p class="cardText">
-              Observe behavior with a steady timing reference applied.
+              Includes a practical evaluation path focused on stable step output and monotonic intent timestamping.
+              Designed to support repeatable assessment.
             </p>
           </div>
 
           <div class="card">
             <h3 class="cardTitle">Controlled access</h3>
             <p class="cardText">
-              Provided through a private evaluation process.
+              Provided through a private evaluation process to ensure confidentiality and integrity of the package.
             </p>
           </div>
         </div>
@@ -281,9 +266,8 @@
       <section id="demo" class="section">
         <h2 class="sectionTitle">Demonstration</h2>
 
-        <p class="sectionLead">
-          A high-level view of timing behavior
-          with and without a steady reference.
+        <p class="sectionLead" style="max-width:900px;">
+          A high-level visualization of steady tick output and intent timeline behavior produced by Prime.
         </p>
 
         <div class="prime-chart-wrapper">
@@ -292,9 +276,7 @@
             alt="SentariX Prime timing visualization"
           >
           <p class="prime-chart-caption">
-            This visualization illustrates the contrast between
-            unstable timing behavior and the steady reference
-            produced by Prime.
+            Prime produces a stable step output and a monotonic timeline for stamping intent and events in real time execution flows.
           </p>
         </div>
       </section>
@@ -311,4 +293,3 @@
   </div>
 </body>
 </html>
-
